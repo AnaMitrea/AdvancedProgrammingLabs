@@ -1,6 +1,6 @@
 package ExercitiulUnu;
 
-public class ExericitiulUnu {
+public class ExercitiulUnu {
 
     public static int sumOfDigits(int n) {
         
