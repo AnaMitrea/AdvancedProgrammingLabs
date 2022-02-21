@@ -95,20 +95,20 @@ public class Homework {
 				System.out.print(wordsString[i] + " ");
 			}
 			
-			int[][] matrixOfNeighbors = new int[n][n];
+			boolean[][] matrixOfNeighbors = new boolean[n][n];
 			
 			
 			System.out.println("\nChecking for neighbors...");
 			for (int i = 0; i < wordsString.length; i++) {
 				for (int j = 0; j < wordsString.length; j++) {
 					if (i == j) {
-						matrixOfNeighbors[i][j] = 1;
+						matrixOfNeighbors[i][j] = true;
 					}
 					else {
 						if (checkNeighborWords(wordsString[i], wordsString[j]) == true)
-							matrixOfNeighbors[i][j] = 1;
+							matrixOfNeighbors[i][j] = true;
 						else
-							matrixOfNeighbors[i][j] = 0;
+							matrixOfNeighbors[i][j] = false;
 					}
 				}
 			}
