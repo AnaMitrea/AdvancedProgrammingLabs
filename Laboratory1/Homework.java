@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
+
 public class Homework {
 	
 	public static boolean isNumber(String input) {
