@@ -1,3 +1,5 @@
+<a href="https://profs.info.uaic.ro/~acf/java/labs/lab_01.html" target="_blank">Lab 1</a>
+
 Compulsory
 - implementat functie de calculare suma cifrelor unui numar - ok
 - implementat numar aleatoriu - ok
@@ -11,4 +13,5 @@ Homework
 - implementat generare de n cuvinte cu p caractere - ok
 - creare matrice de adicaenta a vecinilor de n x n - ok 
 - implementat functie de verificare adiacenta cuvinte generate - ok
+- creare arrayList pentru a stoca vecinii fiecarui cuvant
 - 
