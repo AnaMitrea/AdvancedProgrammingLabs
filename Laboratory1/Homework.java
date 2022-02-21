@@ -77,8 +77,9 @@ public class Homework {
 			
 			String[] wordsString = createWords(n, p, givenLetters);
 			
+			System.out.print("Generated string of words: ");
 			for(int i = 0; i < wordsString.length; i++) {
-				System.out.println(wordsString[i]);
+				System.out.print(wordsString[i] + " ");
 			}
 			
 		}
