@@ -1,7 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
 
-
 public class Homework {
 	
 	public static boolean isNumber(String input) {
@@ -57,6 +56,20 @@ public class Homework {
 		return wordsString;
 	}
 	
+	
+	public static boolean checkNeighborWords(String wordOne, String wordTwo) {
+		for (int i = 0; i < wordOne.length(); i++) {
+			char letter = wordOne.charAt(i);
+			for (int j = 0; j < wordTwo.length(); j++) {
+				if (letter == wordTwo.charAt(j)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	
 
 	public static void main(String[] args) {
 		for (int i = 0; i < args.length; i++) {
@@ -65,24 +78,47 @@ public class Homework {
 		
 		if (validateInput(args) == true)
 		{
-			int n, p;
-			n = Integer.parseInt(args[0]);
-			p = Integer.parseInt(args[1]);
+			int n = Integer.parseInt(args[0]); // n words
+			int p = Integer.parseInt(args[1]); // p characters in each word
 			
 			System.out.println("n = " + n + " and p = " + p);
 			
 			String[] givenLetters = Arrays.copyOfRange(args, 2,args.length);  // copying args[2]-args[length] to givenLetters
-			for(int i = 0; i < givenLetters.length; i++) {
+			for (int i = 0; i < givenLetters.length; i++) {
 				System.out.println(givenLetters[i]);
 			}
 			
 			String[] wordsString = createWords(n, p, givenLetters);
 			
 			System.out.print("Generated string of words: ");
-			for(int i = 0; i < wordsString.length; i++) {
+			for (int i = 0; i < wordsString.length; i++) {
 				System.out.print(wordsString[i] + " ");
 			}
 			
+			int[][] matrixOfNeighbors = new int[n][n];
+			
+			
+			System.out.println("\nChecking for neighbors...");
+			for (int i = 0; i < wordsString.length; i++) {
+				for (int j = 0; j < wordsString.length; j++) {
+					if (i == j) {
+						matrixOfNeighbors[i][j] = 1;
+					}
+					else {
+						if (checkNeighborWords(wordsString[i], wordsString[j]) == true)
+							matrixOfNeighbors[i][j] = 1;
+						else
+							matrixOfNeighbors[i][j] = 0;
+					}
+				}
+			}
+			
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					System.out.print(matrixOfNeighbors[i][j] + " ");
+				}
+				System.out.print("\n");
+			}
 		}
 		else {
 			System.out.println("Invalid arguments.");
