@@ -14,4 +14,5 @@ Homework
 - creare matrice de adicaenta a vecinilor de n x n - ok 
 - implementat functie de verificare adiacenta cuvinte generate - ok
 - creare arrayList pentru a stoca vecinii fiecarui cuvant
-- 
+- afisare running time in ns pt un input n foarte mare (>30_000)
+            -> modificare JVM Heap Space using the VM options -Xms4G -Xmx4G.
