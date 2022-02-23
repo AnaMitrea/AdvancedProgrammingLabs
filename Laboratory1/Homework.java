@@ -1,7 +1,6 @@
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class Homework {
 	
@@ -43,16 +42,15 @@ public class Homework {
 		for (int i = 0; i < numberOfWords; i++) {
 			char[] word = new char[lengthOfWords];
 			
-			System.out.println("i = " + i + ":");
+			//System.out.println("i = " + i + ":");
 			for (int j = 0; j < word.length; j++) {
 				Random r = new Random();
 				int randomIndex = r.nextInt(givenLetters.length);
-				
-				System.out.print("RandomIndex= " + randomIndex + " ; ");
+				//System.out.print("RandomIndex= " + randomIndex + " ; ");
 				
 				word[j] = givenLetters[randomIndex].charAt(0);
 			}
-			System.out.print("\n");
+			//System.out.print("\n");
 			wordsString[i] = new String(word);
 		}
 		
@@ -117,14 +115,11 @@ public class Homework {
 		
 		for (int i = 0; i < n; i++) {
 			ArrayList<String> listForEachWord = new ArrayList<String>();
-			System.out.print("For " + wordsString[i] + " , Neighbors: ");
 			for (int j = 0; j < n; j++) {
 				if (matrixOfNeighbors[i][j] == true && i != j) {
-					System.out.print(wordsString[j] + " ");
 					listForEachWord.add(wordsString[j]);
 				}
 			}
-			System.out.println();
 			neighborList.add(listForEachWord);
 		}
 		
