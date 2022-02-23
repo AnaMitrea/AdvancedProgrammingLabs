@@ -53,6 +53,12 @@ public class Homework {
 			System.out.print("\n");
 			wordsString[i] = new String(word);
 		}
+		
+		System.out.print("Generated string of words: ");
+		for (int i = 0; i < wordsString.length; i++) {
+			System.out.print(wordsString[i] + " ");
+		}
+		
 		return wordsString;
 	}
 	
@@ -69,6 +75,26 @@ public class Homework {
 		return false;
 	}
 	
+	public static boolean[][] createMatrixOfNeighbors(String[] wordsString) {
+		int stringLength = wordsString.length;
+		boolean[][] matrixOfNeighbors = new boolean[stringLength][stringLength];
+		
+		for (int i = 0; i < stringLength; i++) {
+			for (int j = 0; j < stringLength; j++) {
+				if (i == j) {
+					matrixOfNeighbors[i][j] = true;
+				}
+				else {
+					if (checkNeighborWords(wordsString[i], wordsString[j]) == true)
+						matrixOfNeighbors[i][j] = true;
+					else
+						matrixOfNeighbors[i][j] = false;
+				}
+			}
+		}
+		return matrixOfNeighbors;
+	}
+	
 
 	public static void main(String[] args) {
 		for (int i = 0; i < args.length; i++) {
@@ -79,45 +105,26 @@ public class Homework {
 		{
 			int n = Integer.parseInt(args[0]); // n words
 			int p = Integer.parseInt(args[1]); // p characters in each word
-			
 			System.out.println("n = " + n + " and p = " + p);
 			
 			String[] givenLetters = Arrays.copyOfRange(args, 2,args.length);  // copying args[2]-args[length] to givenLetters
+			System.out.print("Given letters: ");
 			for (int i = 0; i < givenLetters.length; i++) {
-				System.out.println(givenLetters[i]);
+				System.out.print(givenLetters[i] + " ");
 			}
+			System.out.println();
 			
 			String[] wordsString = createWords(n, p, givenLetters);
-			
-			System.out.print("Generated string of words: ");
-			for (int i = 0; i < wordsString.length; i++) {
-				System.out.print(wordsString[i] + " ");
-			}
-			
-			boolean[][] matrixOfNeighbors = new boolean[n][n];
-			
+			boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
 			
 			System.out.println("\nChecking for neighbors...");
-			for (int i = 0; i < wordsString.length; i++) {
-				for (int j = 0; j < wordsString.length; j++) {
-					if (i == j) {
-						matrixOfNeighbors[i][j] = true;
-					}
-					else {
-						if (checkNeighborWords(wordsString[i], wordsString[j]) == true)
-							matrixOfNeighbors[i][j] = true;
-						else
-							matrixOfNeighbors[i][j] = false;
-					}
-				}
-			}
-			
 			for (int i = 0; i < n; i++) {
 				for (int j = 0; j < n; j++) {
 					System.out.print(matrixOfNeighbors[i][j] + " ");
 				}
 				System.out.print("\n");
 			}
+			
 		}
 		else {
 			System.out.println("Invalid arguments.");
