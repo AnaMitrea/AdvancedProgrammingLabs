@@ -13,6 +13,6 @@ Homework
 - implementat generare de n cuvinte cu p caractere - ok
 - creare matrice de adicaenta a vecinilor de n x n - ok 
 - implementat functie de verificare adiacenta cuvinte generate - ok
-- creare arrayList pentru a stoca vecinii fiecarui cuvant - 
+- creare arrayList pentru a stoca vecinii fiecarui cuvant - ok
 - afisare running time in ns pt un input n foarte mare (>30_000)
 - modificare JVM Heap Space using the VM options -Xms4G -Xmx4G.
