@@ -1,5 +1,7 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Homework {
 	
@@ -54,12 +56,14 @@ public class Homework {
 			wordsString[i] = new String(word);
 		}
 		
-		System.out.print("Generated string of words: ");
+		return wordsString;
+	}
+	
+	public static void printWords(String[] wordsString) {
+		System.out.print("\nGenerated string of words: ");
 		for (int i = 0; i < wordsString.length; i++) {
 			System.out.print(wordsString[i] + " ");
 		}
-		
-		return wordsString;
 	}
 	
 	
@@ -95,8 +99,42 @@ public class Homework {
 		return matrixOfNeighbors;
 	}
 	
+	public static void printMatrix(boolean[][] matrixOfNeighbors) {
+		int matrixLength = matrixOfNeighbors.length;
+		
+		System.out.println("\n\nChecking for neighbors...");
+		for (int i = 0; i < matrixLength; i++) {
+			for (int j = 0; j < matrixLength; j++) {
+				System.out.print(matrixOfNeighbors[i][j] + " ");
+			}
+			System.out.print("\n");
+		}
+	}
+	
+	public static ArrayList<ArrayList<String>> createNeighborList(String[] wordsString, boolean[][] matrixOfNeighbors) {
+		ArrayList<ArrayList<String>> neighborList = new ArrayList<ArrayList<String>>();
+		int n = wordsString.length;
+		
+		for (int i = 0; i < n; i++) {
+			ArrayList<String> listForEachWord = new ArrayList<String>();
+			System.out.print("For " + wordsString[i] + " , Neighbors: ");
+			for (int j = 0; j < n; j++) {
+				if (matrixOfNeighbors[i][j] == true && i != j) {
+					System.out.print(wordsString[j] + " ");
+					listForEachWord.add(wordsString[j]);
+				}
+			}
+			System.out.println();
+			neighborList.add(listForEachWord);
+		}
+		
+		return neighborList;
+	}
+	
 
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
+		
 		for (int i = 0; i < args.length; i++) {
 			System.out.println("Argument " + i + " : " + args[i]);
 		}
@@ -114,21 +152,26 @@ public class Homework {
 			}
 			System.out.println();
 			
-			String[] wordsString = createWords(n, p, givenLetters);
+			String[] wordsString = createWords(n, p, givenLetters);		
 			boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
+					
+			ArrayList<ArrayList<String>> neighborList = createNeighborList(wordsString, matrixOfNeighbors);
 			
-			System.out.println("\nChecking for neighbors...");
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < n; j++) {
-					System.out.print(matrixOfNeighbors[i][j] + " ");
-				}
-				System.out.print("\n");
+			
+			if (n <= 30_000) {
+				printWords(wordsString);
+				printMatrix(matrixOfNeighbors);
+				System.out.println("List: " + neighborList);
 			}
 			
 		}
 		else {
 			System.out.println("Invalid arguments.");
 		}
+		
+		long endTime = System.nanoTime();
+		long timeElapsed = endTime - startTime;
+		System.out.println("Execution time in nanoseconds: " + timeElapsed);
 	}
 
 }
