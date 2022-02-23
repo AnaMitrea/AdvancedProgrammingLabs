@@ -149,24 +149,19 @@ public class Homework {
 			
 			String[] wordsString = createWords(n, p, givenLetters);		
 			boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
-					
 			ArrayList<ArrayList<String>> neighborList = createNeighborList(wordsString, matrixOfNeighbors);
-			
 			
 			if (n <= 30_000) {
 				printWords(wordsString);
 				printMatrix(matrixOfNeighbors);
 				System.out.println("List: " + neighborList);
 			}
-			
 		}
 		else {
 			System.out.println("Invalid arguments.");
 		}
-		
 		long endTime = System.nanoTime();
 		long timeElapsed = endTime - startTime;
 		System.out.println("Execution time in nanoseconds: " + timeElapsed);
 	}
-
 }
