@@ -1,5 +1,6 @@
 Compulsory:
 -
+[a link](https://github.com/AnaMitrea/AdvancedProgrammingLabs/tree/main/Laboratory2/Compulsory/src/main/java)
 - creat clasele Event, Room si Main
 - creat Enum-ul Type
 - implementat setters si getters pentru variabilele private din Event si Room
