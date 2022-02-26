@@ -1,4 +1,5 @@
 Compulsory:
+-
 - creat clasele Event, Room si Main
 - creat Enum-ul Type
 - implementat setters si getters pentru variabilele private din Event si Room
