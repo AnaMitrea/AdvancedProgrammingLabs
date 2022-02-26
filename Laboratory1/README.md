@@ -1,6 +1,7 @@
 <a href="https://profs.info.uaic.ro/~acf/java/labs/lab_01.html" target="_blank">Lab 1</a>
 
 Compulsory
+-
 - implementat functie de calculare suma cifrelor unui numar - ok
 - implementat numar aleatoriu - ok
 - implementat conversii string (numar binar) to decimal, string (numar hexadecimal) to decimal - ok
@@ -8,6 +9,7 @@ Compulsory
 - implementat afisari specifice - ok
 
 Homework 
+-
 - clean code + organizare cod - ok
 - implementat validare input - ok
 - implementat generare de n cuvinte cu p caractere - ok
