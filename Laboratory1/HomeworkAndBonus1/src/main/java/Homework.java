@@ -113,7 +113,6 @@ public class Homework {
             }
             neighborList.add(listForEachWord);
         }
-
         return neighborList;
     }
 
