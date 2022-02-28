@@ -174,7 +174,7 @@ public class Homework {
 
         for(int i = 0; i < wordList.size(); i++) {
             ArrayList<String> visited = new ArrayList<String>();
-            visited.add(wordList.get(i));
+            visited.add(wordList.get(i)); // i - pozitia de start in parcurgerea dfs
 
             visited = dfs(wordList,visited,matrixOfNeighbors,i);
 
@@ -199,28 +199,30 @@ public class Homework {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
-        if (validateInput(args))
+        if (!validateInput(args))
         {
-            int n = Integer.parseInt(args[0]); // n words
-            int p = Integer.parseInt(args[1]); // p characters in each word
-
-            String[] givenLetters = Arrays.copyOfRange(args, 2,args.length);  // copying args[2]-args[length] to givenLetters
-            printGivenWords(givenLetters);
-
-            ArrayList<String> wordsString = createWords(n, p, givenLetters);
-            boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
-            ArrayList<ArrayList<String>> neighborList = createNeighborList(wordsString, matrixOfNeighbors);
-
-            if (n <= 30_000) {
-                printHomework(wordsString,matrixOfNeighbors,neighborList);
-                printBonus(wordsString);
-            }
-        }
-        else {
             System.out.println("Invalid arguments.");
+            System.exit(0);
         }
-        long endTime = System.nanoTime();
-        long timeElapsed = endTime - startTime;
-        System.out.println("Execution time in nanoseconds: " + timeElapsed);
+        int n = Integer.parseInt(args[0]); // n words
+        int p = Integer.parseInt(args[1]); // p characters in each word
+
+        String[] givenLetters = Arrays.copyOfRange(args, 2,args.length);  // copying args[2]-args[length] to givenLetters
+        printGivenWords(givenLetters);
+
+        ArrayList<String> wordsString = createWords(n, p, givenLetters);
+        boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
+        ArrayList<ArrayList<String>> neighborList = createNeighborList(wordsString, matrixOfNeighbors);
+
+        if (n <= 30_000) {
+            printHomework(wordsString,matrixOfNeighbors,neighborList);
+            printBonus(wordsString);
+        }
+        else
+        {
+            long endTime = System.nanoTime();
+            long timeElapsed = endTime - startTime;
+            System.out.println("Execution time in nanoseconds: " + timeElapsed);
+        }
     }
 }
