@@ -24,11 +24,11 @@ Bonus
 - implementare lista cuvinte distincte (eliminare posibile duplicate)
 - creare o noua matrice de adiacenta a vecinilor listei anterioare de cuvinte fara duplicate
 - implementare parcurgere DFS cu ajutorul :
-      *  lista de cuvinte generate
-      *  lista de "noduri" vizitate cu ajutorul careia se elimina posibilitatea alegerii unui nod deja ales in pasii anteriori
-      *  matricea de vecini cu ajutorul careia se aleg urmatoarele noduri adiacente (vecine) cu nodul curent
-      *  pozitia curenta a nodului care este adaugat in formarea circuitului
+      *  lista de cuvinte generate<br/>
+      *  lista de "noduri" vizitate cu ajutorul careia se elimina posibilitatea alegerii unui nod deja ales in pasii anteriori<br/>
+      *  matricea de vecini cu ajutorul careia se aleg urmatoarele noduri adiacente (vecine) cu nodul curent<br/>
+      *  pozitia curenta a nodului care este adaugat in formarea circuitului<br/>
 - implementare metoda de start a parcurgerii DFS pentru fiecare cuvant generat
-      * creare lista noua de "noduri" vizitate cu ajutorul careia se verifica lungimea circuitului in functie de lista anterioara
-      * afisare cuvinte din circuit
-      * afisare lungime circuit
+      * creare lista noua de "noduri" vizitate cu ajutorul careia se verifica lungimea circuitului in functie de lista anterioara<br/>
+      * afisare cuvinte din circuit<br/>
+      * afisare lungime circuit<br/>
