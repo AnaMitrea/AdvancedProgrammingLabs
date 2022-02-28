@@ -52,12 +52,19 @@ public class Homework {
         return wordsString;
     }
 
+    public static void printGivenWords(String[] givenLetters) {
+        System.out.print("Given letters: ");
+        for (String givenLetter : givenLetters) {
+            System.out.print(givenLetter + " ");
+        }
+        System.out.println();
+    }
+
     public static void printWords(String information, ArrayList<String> wordsString) {
         System.out.println(information);
         for (String s : wordsString) {
             System.out.print(s + " ");
         }
-        System.out.println();
     }
 
     public static boolean checkNeighborWords(String wordOne, String wordTwo) {
@@ -159,7 +166,7 @@ public class Homework {
             return new ArrayList<String>();
     }
 
-    public static void bonus(ArrayList<String> wordsString) {
+    public static void printBonus(ArrayList<String> wordsString) {
         ArrayList<String> wordList = createNoDuplicates(wordsString);
         boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordList);
 
@@ -175,14 +182,18 @@ public class Homework {
                 bestWordList = visited;
             }
         }
-        printWords("Largest circuit found: ",bestWordList);
+        int k = bestWordList.size() - 1;
+        printWords("Longest circuit found with k = " + k,bestWordList);
         System.out.println();
     }
 
     public static void printHomework(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors, ArrayList<ArrayList<String>> neighborList) {
         printWords("Words List: ",wordsString);
         printMatrix(matrixOfNeighbors);
+        System.out.println();
+
         System.out.println("Neighbor List: " + neighborList);
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -194,11 +205,7 @@ public class Homework {
             int p = Integer.parseInt(args[1]); // p characters in each word
 
             String[] givenLetters = Arrays.copyOfRange(args, 2,args.length);  // copying args[2]-args[length] to givenLetters
-            System.out.print("Given letters: ");
-            for (String givenLetter : givenLetters) {
-                System.out.print(givenLetter + " ");
-            }
-            System.out.println();
+            printGivenWords(givenLetters);
 
             ArrayList<String> wordsString = createWords(n, p, givenLetters);
             boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
@@ -206,7 +213,7 @@ public class Homework {
 
             if (n <= 30_000) {
                 printHomework(wordsString,matrixOfNeighbors,neighborList);
-                bonus(wordsString);
+                printBonus(wordsString);
             }
         }
         else {
