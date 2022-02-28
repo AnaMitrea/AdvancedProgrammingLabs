@@ -22,7 +22,7 @@ Homework
 Bonus
 -
 - implementare lista cuvinte distincte (eliminare posibile duplicate)
-- creare o noua matrice de adiacenta a vecinilor listei anterioare
+- creare o noua matrice de adiacenta a vecinilor listei anterioare de cuvinte fara duplicate
 - implementare parcurgere DFS cu ajutorul :
       *  lista de cuvinte generate
       *  lista de "noduri" vizitate cu ajutorul careia se elimina posibilitatea alegerii unui nod deja ales in pasii anteriori
