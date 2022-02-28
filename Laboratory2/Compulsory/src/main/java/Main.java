@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class Main {
-    public static ArrayList<Room> createRooms(ArrayList<Room> rooms) {
+    public static ArrayList<Room> createRooms() {
+        ArrayList<Room> rooms = new ArrayList<Room>();
         Room room1 = new Room("401",30,Type.Laboratory);
         Room room2 = new Room("403",30,Type.Laboratory);
         Room room3 = new Room("405",30,Type.Laboratory);
@@ -14,7 +15,8 @@ public class Main {
         return rooms;
     }
 
-    public static ArrayList<Event> createEvents(ArrayList<Event> events) {
+    public static ArrayList<Event> createEvents() {
+        ArrayList<Event> events = new ArrayList<Event>();
         Event event1 = new Event("C1",100,8,10);
         Event event2 = new Event("C2",100,10,12);
         Event event3 = new Event("L1",30,8,10);
@@ -46,12 +48,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        ArrayList<Room> rooms= new ArrayList<Room>();
-        rooms = createRooms(rooms);
+        ArrayList<Room> rooms = createRooms();
         printRooms(rooms);
 
-        ArrayList<Event> events = new ArrayList<Event>();
-        events = createEvents(events);
+        ArrayList<Event> events = createEvents();
         printEvents(events);
     }
 }
