@@ -45,8 +45,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Events: " +
-                name + "(" +
+        return  name + "(" +
                 "size=" + capacity +
                 ", start=" + startTime +
                 ", end=" + endTime +

@@ -32,13 +32,15 @@ public class Main {
         for(Room room : rooms) {
             System.out.print(room.toString() + " ");
         }
+        System.out.println();
     }
 
     public static void printEvents(ArrayList<Event> events) {
-        System.out.println("Events: ");
+        System.out.print("Events: ");
         for(Event event : events) {
             System.out.print(event.toString() + " ");
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
