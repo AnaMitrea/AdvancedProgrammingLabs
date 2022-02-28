@@ -28,7 +28,7 @@ Bonus
       *  lista de cuvinte vizitate cu ajutorul careia se elimina posibilitatea alegerii unui cuvant deja ales in pasii anteriori<br/>
       *  matricea de vecini cu ajutorul careia se aleg urmatoarele cuvinte adiacente (vecine) cu, cuvantul curent<br/>
       *  pozitia curenta a cuvantului care este adaugat in formarea circuitului<br/>
-- implementare metoda de start a parcurgerii DFS pentru fiecare cuvant generat
+- implementare metoda de start a parcurgerii DFS pentru fiecare cuvant generati<br/>
       * creare lista noua de cuvinte vizitate cu ajutorul careia se verifica lungimea circuitului in functie de lista anterioara<br/>
       * afisare cuvinte din circuit<br/>
       * afisare lungime circuit<br/>
