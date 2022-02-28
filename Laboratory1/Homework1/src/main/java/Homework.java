@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Homework {
-    public static boolean isNumber(String input) {
+    public boolean isNumber(String input) {
         try {
             @SuppressWarnings("unused")
             int number = Integer.parseInt(input);
@@ -15,11 +15,11 @@ public class Homework {
         return false;
     }
 
-    public static boolean isCharacter(char input) {
+    public boolean isCharacter(char input) {
         return (input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z');
     }
 
-    public static boolean validateInput(String[] input) {
+    public boolean validateInput(String[] input) {
         if (!isNumber(input[0]) || !isNumber(input[1]))
             return false;
         for (int i = 2; i < input.length; i++) {
@@ -32,7 +32,7 @@ public class Homework {
         return true;
     }
 
-    public static ArrayList<String> createWords(int numberOfWords, int lengthOfWords, String[] givenLetters) {
+    public ArrayList<String> createWords(int numberOfWords, int lengthOfWords, String[] givenLetters) {
         ArrayList<String> wordsString = new ArrayList<String>();
 
         for (int i = 0; i < numberOfWords; i++) {
@@ -52,7 +52,7 @@ public class Homework {
         return wordsString;
     }
 
-    public static void printGivenWords(String[] givenLetters) {
+    public void printGivenWords(String[] givenLetters) {
         System.out.print("Given letters: ");
         for (String givenLetter : givenLetters) {
             System.out.print(givenLetter + " ");
@@ -60,14 +60,14 @@ public class Homework {
         System.out.println();
     }
 
-    public static void printWords(String information, ArrayList<String> wordsString) {
+    public void printWords(String information, ArrayList<String> wordsString) {
         System.out.println(information);
         for (String s : wordsString) {
             System.out.print(s + " ");
         }
     }
 
-    public static boolean checkNeighborWords(String wordOne, String wordTwo) {
+    public boolean checkNeighborWords(String wordOne, String wordTwo) {
         for (int i = 0; i < wordOne.length(); i++) {
             char letter = wordOne.charAt(i);
             for (int j = 0; j < wordTwo.length(); j++) {
@@ -79,7 +79,7 @@ public class Homework {
         return false;
     }
 
-    public static boolean[][] createMatrixOfNeighbors(ArrayList<String> wordsString) {
+    public boolean[][] createMatrixOfNeighbors(ArrayList<String> wordsString) {
         int stringLength = wordsString.size();
         boolean[][] matrixOfNeighbors = new boolean[stringLength][stringLength];
 
@@ -96,7 +96,7 @@ public class Homework {
         return matrixOfNeighbors;
     }
 
-    public static void printMatrix(boolean[][] matrixOfNeighbors) {
+    public void printMatrix(boolean[][] matrixOfNeighbors) {
         int matrixLength = matrixOfNeighbors.length;
 
         System.out.println("\n\nChecking for neighbors...");
@@ -108,7 +108,7 @@ public class Homework {
         }
     }
 
-    public static ArrayList<ArrayList<String>> createNeighborList(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors) {
+    public ArrayList<ArrayList<String>> createNeighborList(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors) {
         ArrayList<ArrayList<String>> neighborList = new ArrayList<ArrayList<String>>();
         int n = wordsString.size();
 
@@ -124,7 +124,7 @@ public class Homework {
         return neighborList;
     }
 
-    public static ArrayList<String> createNoDuplicates(ArrayList<String> wordsString) {
+    public ArrayList<String> createNoDuplicates(ArrayList<String> wordsString) {
         ArrayList<String> wordList = new ArrayList<String>();
 
         for(String word : wordsString) {
@@ -135,7 +135,7 @@ public class Homework {
         return wordList;
     }
 
-    public static ArrayList<String> dfs(ArrayList<String> wordList, ArrayList<String> visited, boolean[][] matrixOfNeighbors, int position) {
+    public ArrayList<String> dfs(ArrayList<String> wordList, ArrayList<String> visited, boolean[][] matrixOfNeighbors, int position) {
         /**
          * Conditii de oprire algoritm:
          * 1. cautare ultimul cuvant adaugat (wordList[pos]) sa fie egal cu primul cuvant din visited[0] pentru a forma un circuit
@@ -176,7 +176,7 @@ public class Homework {
             return new ArrayList<String>();
     }
 
-    public static void printHomework(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors, ArrayList<ArrayList<String>> neighborList) {
+    public void printHomework(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors, ArrayList<ArrayList<String>> neighborList) {
         printWords("Words List: ",wordsString);
         printMatrix(matrixOfNeighbors);
         System.out.println();
@@ -185,7 +185,7 @@ public class Homework {
         System.out.println();
     }
 
-    public static void printBonus(ArrayList<String> wordsString) {
+    public void printBonus(ArrayList<String> wordsString) {
         ArrayList<String> wordList = createNoDuplicates(wordsString);
         boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordList);
 
@@ -204,36 +204,5 @@ public class Homework {
         int k = bestWordList.size() - 1;
         printWords("Longest circuit found with k = " + k,bestWordList);
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        long startTime = System.nanoTime();
-
-        if (!validateInput(args))
-        {
-            System.out.println("Invalid arguments.");
-            System.exit(0);
-        }
-
-        int n = Integer.parseInt(args[0]); // n words
-        int p = Integer.parseInt(args[1]); // p characters in each word
-
-        String[] givenLetters = Arrays.copyOfRange(args, 2,args.length);  // copying args[2]-args[length] to givenLetters
-        printGivenWords(givenLetters);
-
-        ArrayList<String> wordsString = createWords(n, p, givenLetters);
-        boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordsString);
-        ArrayList<ArrayList<String>> neighborList = createNeighborList(wordsString, matrixOfNeighbors);
-
-        if (n <= 30_000) {
-            printHomework(wordsString,matrixOfNeighbors,neighborList);
-            printBonus(wordsString);
-        }
-        else
-        {
-            long endTime = System.nanoTime();
-            long timeElapsed = endTime - startTime;
-            System.out.println("Execution time in nanoseconds: " + timeElapsed);
-        }
     }
 }
