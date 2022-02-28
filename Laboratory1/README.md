@@ -13,8 +13,22 @@ Homework
 - clean code + organizare cod
 - implementat validare input
 - implementat generare de n cuvinte cu p caractere
-- creare matrice de adicaenta a vecinilor de n x n
+- creare matrice de adiacenta a vecinilor de n x n
 - implementat functie de verificare adiacenta cuvinte generate
 - creare arrayList pentru a stoca vecinii fiecarui cuvant
 - afisare running time in ns pt un input n foarte mare (>30_000)
 - modificare JVM Heap Space using the VM options -Xms4G -Xmx4G. - ???
+
+Bonus
+-
+- implementare lista cuvinte distincte (eliminare posibile duplicate)
+- creare o noua matrice de adiacenta a vecinilor listei anterioare de cuvinte fara duplicate
+- implementare parcurgere DFS cu ajutorul :
+      *  lista de cuvinte generate<br/>
+      *  lista de "noduri" vizitate cu ajutorul careia se elimina posibilitatea alegerii unui nod deja ales in pasii anteriori<br/>
+      *  matricea de vecini cu ajutorul careia se aleg urmatoarele noduri adiacente (vecine) cu nodul curent<br/>
+      *  pozitia curenta a nodului care este adaugat in formarea circuitului<br/>
+- implementare metoda de start a parcurgerii DFS pentru fiecare cuvant generat
+      * creare lista noua de "noduri" vizitate cu ajutorul careia se verifica lungimea circuitului in functie de lista anterioara<br/>
+      * afisare cuvinte din circuit<br/>
+      * afisare lungime circuit<br/>
