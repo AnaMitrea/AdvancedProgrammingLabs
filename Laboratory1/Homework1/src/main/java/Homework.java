@@ -166,6 +166,15 @@ public class Homework {
             return new ArrayList<String>();
     }
 
+    public static void printHomework(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors, ArrayList<ArrayList<String>> neighborList) {
+        printWords("Words List: ",wordsString);
+        printMatrix(matrixOfNeighbors);
+        System.out.println();
+
+        System.out.println("Neighbor List: " + neighborList);
+        System.out.println();
+    }
+
     public static void printBonus(ArrayList<String> wordsString) {
         ArrayList<String> wordList = createNoDuplicates(wordsString);
         boolean[][] matrixOfNeighbors = createMatrixOfNeighbors(wordList);
@@ -187,15 +196,6 @@ public class Homework {
         System.out.println();
     }
 
-    public static void printHomework(ArrayList<String> wordsString, boolean[][] matrixOfNeighbors, ArrayList<ArrayList<String>> neighborList) {
-        printWords("Words List: ",wordsString);
-        printMatrix(matrixOfNeighbors);
-        System.out.println();
-
-        System.out.println("Neighbor List: " + neighborList);
-        System.out.println();
-    }
-
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
@@ -204,6 +204,7 @@ public class Homework {
             System.out.println("Invalid arguments.");
             System.exit(0);
         }
+
         int n = Integer.parseInt(args[0]); // n words
         int p = Integer.parseInt(args[1]); // p characters in each word
 
