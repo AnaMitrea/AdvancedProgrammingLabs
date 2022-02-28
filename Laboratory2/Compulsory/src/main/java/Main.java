@@ -6,6 +6,7 @@ public class Main {
         Room room2 = new Room("403",30,Type.Laboratory);
         Room room3 = new Room("405",30,Type.Laboratory);
         Room room4 = new Room("309",100,Type.Course);
+
         rooms.add(room1);
         rooms.add(room2);
         rooms.add(room3);
@@ -19,6 +20,7 @@ public class Main {
         Event event3 = new Event("L1",30,8,10);
         Event event4 = new Event("L2",100,8,10);
         Event event5 = new Event("L3",100,10,12);
+
         events.add(event1);
         events.add(event2);
         events.add(event3);
