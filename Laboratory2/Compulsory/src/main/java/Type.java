@@ -1,4 +1,4 @@
 public enum Type {
-    Course,
-    Laboratory
+    COURSE,
+    LABORATORY
 }

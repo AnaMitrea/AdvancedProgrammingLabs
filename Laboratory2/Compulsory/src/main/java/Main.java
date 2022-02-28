@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Main {
     public static ArrayList<Room> createRooms() {
         ArrayList<Room> rooms = new ArrayList<Room>();
-        Room room1 = new Room("401",30,Type.Laboratory);
-        Room room2 = new Room("403",30,Type.Laboratory);
-        Room room3 = new Room("405",30,Type.Laboratory);
-        Room room4 = new Room("309",100,Type.Course);
+        Room room1 = new Room("401",30,Type.LABORATORY);
+        Room room2 = new Room("403",30,Type.LABORATORY);
+        Room room3 = new Room("405",30,Type.LABORATORY);
+        Room room4 = new Room("309",100,Type.COURSE);
 
         rooms.add(room1);
         rooms.add(room2);
