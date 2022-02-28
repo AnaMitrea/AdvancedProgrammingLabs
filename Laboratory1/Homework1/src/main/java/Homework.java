@@ -136,31 +136,30 @@ public class Homework {
     }
 
     public static ArrayList<String> dfs(ArrayList<String> wordList, ArrayList<String> visited, boolean[][] matrixOfNeighbors, int position) {
-
         if(visited.size() != 1) {
-            if(visited.indexOf(wordList.get(position)) == 0) {
+            if(visited.indexOf(wordList.get(position)) == 0) { // cautare ultimul cuvant adaugat (wordList[pos]) sa fie egal cu primul cuvant din visited[0] pentru a forma un circuit
                 return visited;
             }
-            else if(visited.indexOf(wordList.get(position)) != (visited.size() - 1))
+            else if(visited.indexOf(wordList.get(position)) != (visited.size() - 1)) // cuvant deja existent in visited => circuitul format nu este corect => return empty
                 return new ArrayList<String>();
         }
 
-        ArrayList<String> bestVisited = new ArrayList<String>(visited);
+        ArrayList<String> bestVisited = new ArrayList<String>(visited); // copiere visited in bestVisited
 
-        for(int i = 0; i < matrixOfNeighbors[position].length; i++) {
+        for(int i = 0; i < matrixOfNeighbors[position].length; i++) { // fiecare cuvant vecin de pe linia "position" in matrice
             if(matrixOfNeighbors[position][i] == true && i != position) {
                 ArrayList<String> newVisited = new ArrayList<String>(visited);
-                newVisited.add(wordList.get(i));
+                newVisited.add(wordList.get(i)); // adaugare cuvant de pe poz i in lista de cuvinte vizitate
 
-                newVisited = dfs(wordList,newVisited,matrixOfNeighbors,i);
+                newVisited = dfs(wordList,newVisited,matrixOfNeighbors,i); // generare parcurgere dfs pentru cuvantul curent de pe poz i
 
-                if(newVisited.size() > bestVisited.size()) {
+                if(newVisited.size() > bestVisited.size()) { // s-a gasit un circuit de lungime mai lunga decat ceea ce era calculat inainte
                     bestVisited = newVisited;
                 }
             }
         }
 
-        if(bestVisited.get(0).equals(bestVisited.get(bestVisited.size() - 1)))
+        if(bestVisited.get(0).equals(bestVisited.get(bestVisited.size() - 1))) // verificare primul cuvant = ultimul cuvant
             return bestVisited;
         else
             return new ArrayList<String>();
