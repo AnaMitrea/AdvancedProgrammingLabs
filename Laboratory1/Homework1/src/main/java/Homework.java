@@ -136,24 +136,35 @@ public class Homework {
     }
 
     public static ArrayList<String> dfs(ArrayList<String> wordList, ArrayList<String> visited, boolean[][] matrixOfNeighbors, int position) {
+        /**
+         * Conditii de oprire algoritm:
+         * 1. cautare ultimul cuvant adaugat (wordList[pos]) sa fie egal cu primul cuvant din visited[0] pentru a forma un circuit
+         * 2. cuvant deja existent in visited => circuitul format nu este corect => return empty
+         *
+         * Parcurgerea dfs in matrice:
+         * - se iau in considerare cuvintele vecine (matrixOfNeighbors[position][i] == true)
+         *      -> fiecare cuvant este adaugat in vectorul visited pentru eliminarea posibilitatii de a fi luat din nou in pasii urmatori
+         * - update la circuit in functie de lungimea lui
+         */
+
         if(visited.size() != 1) {
-            if(visited.indexOf(wordList.get(position)) == 0) { // cautare ultimul cuvant adaugat (wordList[pos]) sa fie egal cu primul cuvant din visited[0] pentru a forma un circuit
+            if(visited.indexOf(wordList.get(position)) == 0) {
                 return visited;
             }
-            else if(visited.indexOf(wordList.get(position)) != (visited.size() - 1)) // cuvant deja existent in visited => circuitul format nu este corect => return empty
+            else if(visited.indexOf(wordList.get(position)) != (visited.size() - 1))
                 return new ArrayList<String>();
         }
 
-        ArrayList<String> bestVisited = new ArrayList<String>(visited); // copiere visited in bestVisited
+        ArrayList<String> bestVisited = new ArrayList<String>(visited);
 
-        for(int i = 0; i < matrixOfNeighbors[position].length; i++) { // fiecare cuvant vecin de pe linia "position" in matrice
+        for(int i = 0; i < matrixOfNeighbors[position].length; i++) {
             if(matrixOfNeighbors[position][i] == true && i != position) {
                 ArrayList<String> newVisited = new ArrayList<String>(visited);
-                newVisited.add(wordList.get(i)); // adaugare cuvant de pe poz i in lista de cuvinte vizitate
+                newVisited.add(wordList.get(i));
 
-                newVisited = dfs(wordList,newVisited,matrixOfNeighbors,i); // generare parcurgere dfs pentru cuvantul curent de pe poz i
+                newVisited = dfs(wordList,newVisited,matrixOfNeighbors,i);
 
-                if(newVisited.size() > bestVisited.size()) { // s-a gasit un circuit de lungime mai lunga decat ceea ce era calculat inainte
+                if(newVisited.size() > bestVisited.size()) {
                     bestVisited = newVisited;
                 }
             }
