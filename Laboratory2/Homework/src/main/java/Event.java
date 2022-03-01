@@ -12,19 +12,19 @@ public class Event {
     }
 
     public String getName() {
-        return name;
+        return  this.name;
     }
 
     public int getCapacity() {
-        return capacity;
+        return  this.capacity;
     }
 
     public int getStartTime() {
-        return startTime;
+        return  this.startTime;
     }
 
     public int getEndTime() {
-        return endTime;
+        return  this.endTime;
     }
 
     public void setName(String name) {
@@ -45,10 +45,10 @@ public class Event {
 
     @Override
     public String toString() {
-        return  name + "(" +
-                "size=" + capacity +
-                ", start=" + startTime +
-                ", end=" + endTime +
+        return  this.getName() + "(" +
+                "size=" +  this.getCapacity() +
+                ", start=" +  this.getStartTime() +
+                ", end=" +  this.getEndTime() +
                 ')';
     }
 }
