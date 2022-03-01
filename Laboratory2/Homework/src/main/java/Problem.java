@@ -16,6 +16,33 @@ public class Problem {
         System.out.println("Added room " + obj.getName());
     }
 
+    public void addEvent(Event obj) {
+        for(Event event : eventsList) {
+            if(event.equals(obj)) {
+                System.out.println("Can't add event " + obj.getName());
+                return;
+            }
+        }
+        eventsList.add(obj);
+        System.out.println("Added event " + obj.getName());
+    }
+
+    public void printRooms() {
+        System.out.print("Rooms: ");
+        for(Room room : roomsList) {
+            System.out.print(room.toString());
+            System.out.print(" ");
+        }
+    }
+
+    public void printEvents() {
+        System.out.print("Events: ");
+        for(Event event : eventsList) {
+            System.out.print(event.toString());
+            System.out.print(" ");
+        }
+    }
+
     public static void main(String[] args) {
         Problem problem = new Problem();
         problem.roomsList = new ArrayList<Room>();
@@ -31,11 +58,20 @@ public class Problem {
         problem.addRoom(room3);
         problem.addRoom(room4);
 
-        System.out.print("Rooms: ");
-        for(Room room : problem.roomsList) {
-            System.out.print(room.toString());
-            System.out.print(" ");
-        }
+        problem.printRooms();
 
+        Event event1 = new Event("C1",100,8,10);
+        Event event2 = new Event("C2",100,10,12);
+        Event event3 = new Event("L1",30,8,10);
+        Event event4 = new Event("L2",100,8,10);
+        Event event5 = new Event("L3",100,10,12);
+
+        problem.addEvent(event1);
+        problem.addEvent(event2);
+        problem.addEvent(event3);
+        problem.addEvent(event4);
+        problem.addEvent(event5);
+
+        problem.printEvents();
     }
 }
