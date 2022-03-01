@@ -23,5 +23,5 @@ Homework:
 - implementare functii printRooms si printEvents
 
 TO DO:
--alg la clasa solutie
--alg pt bonus
+- alg la clasa solutie<br/>
+- alg pt bonus <br/>
