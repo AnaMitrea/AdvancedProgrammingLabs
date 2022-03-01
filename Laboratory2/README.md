@@ -21,3 +21,7 @@ Homework:
 - implementare ovveride la metoda equals dupa criteriul nume al obiectului de tip Room
 - implementare functii addRoom si addEvent
 - implementare functii printRooms si printEvents
+
+TO DO:
+-alg la clasa solutie
+-alg pt bonus
