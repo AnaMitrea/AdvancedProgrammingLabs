@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -136,15 +135,15 @@ public class Homework {
     }
 
     public ArrayList<String> dfs(ArrayList<String> wordList, ArrayList<String> visited, boolean[][] matrixOfNeighbors, int position) {
-        /**
-         * Conditii de oprire algoritm:
-         * 1. cautare ultimul cuvant adaugat (wordList[pos]) sa fie egal cu primul cuvant din visited[0] pentru a forma un circuit
-         * 2. cuvant deja existent in visited => circuitul format nu este corect => return empty
-         *
-         * Parcurgerea dfs in matrice:
-         * - se iau in considerare cuvintele vecine (matrixOfNeighbors[position][i] == true)
-         *      -> fiecare cuvant este adaugat in vectorul visited pentru eliminarea posibilitatii de a fi luat din nou in pasii urmatori
-         * - update la circuit in functie de lungimea lui
+        /*
+          Conditii de oprire algoritm:
+          1. cautare ultimul cuvant adaugat (wordList[pos]) sa fie egal cu primul cuvant din visited[0] pentru a forma un circuit
+          2. cuvant deja existent in visited => circuitul format nu este corect => return empty
+
+          Parcurgerea dfs in matrice:
+          - se iau in considerare cuvintele vecine (matrixOfNeighbors[position][i] == true)
+               -> fiecare cuvant este adaugat in vectorul visited pentru eliminarea posibilitatii de a fi luat din nou in pasii urmatori
+          - update la circuit in functie de lungimea lui
          */
 
         if(visited.size() != 1) {
