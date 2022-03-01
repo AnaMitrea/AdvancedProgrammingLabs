@@ -9,3 +9,15 @@ Compulsory:
 
 Homework:
 -
+- creat clase separate: <br/>
+  * Room : clasa abstracta <br/>
+  * Lecture: clasa mostenita din Room <br/>
+  * Laboratory: clasa mostenita din Room <br/>
+  * Event <br/>
+  * Problem: clasa ce descrie instanta problemei <br/>
+  * Solution: clasa ce descrie implementarea solutiei problemei <br/>
+- implementat setters si getters pentru atributele clasei Room, respectiv lecture si Laboratory si clasa Event
+- implementare override la metoda toString
+- implementare ovveride la metoda equals dupa criteriul nume al obiectului de tip Room
+- implementare functii addRoom si addEvent
+- implementare functii printRooms si printEvents
