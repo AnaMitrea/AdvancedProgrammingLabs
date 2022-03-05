@@ -22,6 +22,9 @@ Homework:
 - implementare functii addRoom si addEvent
 - implementare functii printRooms si printEvents
 - implementare constructori pentru clasele Problem si Solution
+- implementare comparatoare pentru obiectele Event si Room pentru sortarea crescatoare:
+  * La Event: dupa start time
+  * La Room: dupa capacitate
 - implementare algoritm minimizare numar de camere folosite
 
 
