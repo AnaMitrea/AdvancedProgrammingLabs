@@ -18,6 +18,17 @@ public class Solution {
         return availableRooms;
     }
 
+    /**
+     * Method used for creating a feasible solution to the problem, "trying" to minimize the number of used rooms.
+     * The method uses a sorted event list and iterates through it, searching for an available room for the current event.
+     *
+     * Available room means:
+     * -> array list, availableRooms, has '-1' on the searched index
+     *      or
+     * -> the ending time of the last event is less than or equal to the starting time of the current event.
+     * - room type and event type are equal. (C events in Lecture halls and L events in Lab rooms).
+     * - the capacity of current event is less than or equal to the capacity of the room.
+     */
     public void getSolution() {
         ArrayList<Integer> availableRooms = emptyAvailableRooms(sortedRooms.size());
 
@@ -25,15 +36,15 @@ public class Solution {
             Event event = sortedEvents.get(i);
             for(int j = 0; j < sortedRooms.size(); j++) {
                 Room room = sortedRooms.get(j);
-                if(room.getRoomType().equals( event.checkEventType() )) { // acelasi tip
-                    if(event.getCapacity() <= room.getCapacity()) { //capacitatea eventului nu depaseste capacitatea camerei
-                        if(availableRooms.get(j) == -1) {  // e neocupata
-                            availableRooms.set(j,event.getEndTime()); // s-a ocupat camera
+                if(room.getRoomType().equals( event.checkEventType() )) {
+                    if(event.getCapacity() <= room.getCapacity()) {
+                        if(availableRooms.get(j) == -1) {
+                            availableRooms.set(j,event.getEndTime());
                             System.out.println(event.getName() + " -> " + room.getName());
                             break;
                         }
                         else {
-                            if(availableRooms.get(j) <= event.getStartTime()) { //evenimentele nu se suprapun
+                            if(availableRooms.get(j) <= event.getStartTime()) {
                                 availableRooms.set(j,event.getEndTime());
                                 System.out.println(event.getName() + " -> " + room.getName());
                                 break;
