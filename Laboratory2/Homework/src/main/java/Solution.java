@@ -32,20 +32,20 @@ public class Solution {
     public void getSolution() {
         ArrayList<Integer> availableRooms = emptyAvailableRooms(sortedRooms.size());
 
-        for(int i = 0; i < sortedEvents.size(); i++) {
-            Event event = sortedEvents.get(i);
-            for(int j = 0; j < sortedRooms.size(); j++) {
-                Room room = sortedRooms.get(j);
+        for(int indexEvent = 0; indexEvent < sortedEvents.size(); indexEvent++) {
+            Event event = sortedEvents.get(indexEvent);
+            for(int indexRoom = 0; indexRoom < sortedRooms.size(); indexRoom++) {
+                Room room = sortedRooms.get(indexRoom);
                 if(room.getRoomType().equals( event.checkEventType() )) {
                     if(event.getCapacity() <= room.getCapacity()) {
-                        if(availableRooms.get(j) == -1) {
-                            availableRooms.set(j,event.getEndTime());
+                        if(availableRooms.get(indexRoom) == -1) {
+                            availableRooms.set(indexRoom,event.getEndTime());
                             System.out.println(event.getName() + " -> " + room.getName());
                             break;
                         }
                         else {
-                            if(availableRooms.get(j) <= event.getStartTime()) {
-                                availableRooms.set(j,event.getEndTime());
+                            if(availableRooms.get(indexRoom) <= event.getStartTime()) {
+                                availableRooms.set(indexRoom,event.getEndTime());
                                 System.out.println(event.getName() + " -> " + room.getName());
                                 break;
                             }
