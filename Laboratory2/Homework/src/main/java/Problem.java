@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Problem {
-    public ArrayList<Room> roomsList;
-    public ArrayList<Event> eventsList;
-
+    private ArrayList<Room> roomsList;
+    private ArrayList<Event> eventsList;
 
     public void addRoom(Room obj) {
         for(Room room : roomsList) {
@@ -33,6 +32,7 @@ public class Problem {
             System.out.print(room.toString());
             System.out.print(" ");
         }
+        System.out.println();
     }
 
     public void printEvents() {
@@ -41,37 +41,42 @@ public class Problem {
             System.out.print(event.toString());
             System.out.print(" ");
         }
+        System.out.println();
     }
 
-    public static void main(String[] args) {
-        Problem problem = new Problem();
-        problem.roomsList = new ArrayList<Room>();
-        problem.eventsList = new ArrayList<Event>();
+    public ArrayList<Room> getArrayListRoom() {
+        return this.roomsList;
+    }
+
+    public ArrayList<Event> getArrayListEvent() {
+        return this.eventsList;
+    }
+
+    public Problem() {
+        System.out.println("Created an instance.");
+        this.roomsList = new ArrayList<Room>();
+        this.eventsList = new ArrayList<Event>();
 
         Room room1 = new Laboratory("401",30,"Linux");
         Room room2 = new Laboratory("403",30,"Windows 10");
         Room room3 = new Laboratory("405",30,"Windows 7");
         Room room4 = new Lecture("309",100,true);
 
-        problem.addRoom(room1);
-        problem.addRoom(room2);
-        problem.addRoom(room3);
-        problem.addRoom(room4);
-
-        problem.printRooms();
+        this.addRoom(room1);
+        this.addRoom(room2);
+        this.addRoom(room3);
+        this.addRoom(room4);
 
         Event event1 = new Event("C1",100,8,10);
         Event event2 = new Event("C2",100,10,12);
         Event event3 = new Event("L1",30,8,10);
-        Event event4 = new Event("L2",100,8,10);
-        Event event5 = new Event("L3",100,10,12);
+        Event event4 = new Event("L2",30,8,10);
+        Event event5 = new Event("L3",30,10,12);
 
-        problem.addEvent(event1);
-        problem.addEvent(event2);
-        problem.addEvent(event3);
-        problem.addEvent(event4);
-        problem.addEvent(event5);
-
-        problem.printEvents();
+        this.addEvent(event1);
+        this.addEvent(event2);
+        this.addEvent(event3);
+        this.addEvent(event4);
+        this.addEvent(event5);
     }
 }

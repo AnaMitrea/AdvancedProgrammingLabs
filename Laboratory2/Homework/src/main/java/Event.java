@@ -51,4 +51,12 @@ public class Event {
                 ", end=" +  this.getEndTime() +
                 ')';
     }
+
+    public String checkEventType() {
+        if(this.getName().charAt(0) ==  'C') {
+            return "Lecture Hall";
+        }
+        else
+            return "Lab";
+    }
 }
