@@ -21,7 +21,11 @@ Homework:
 - implementare ovveride la metoda equals dupa criteriul nume al obiectului de tip Room
 - implementare functii addRoom si addEvent
 - implementare functii printRooms si printEvents
+- implementare constructori pentru clasele Problem si Solution
+- implementare algoritm minimizare numar de camere folosite
+
+
 
 TO DO:
-- alg la clasa solutie<br/>
+- 
 - alg pt bonus <br/>
