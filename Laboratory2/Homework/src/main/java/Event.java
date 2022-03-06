@@ -43,6 +43,11 @@ public class Event {
         this.endTime = endTime;
     }
 
+    /**
+     * Method used to display an object.
+     *
+     * @return  A string representation of the object.
+     */
     @Override
     public String toString() {
         return  this.getName() + "(" +
@@ -52,6 +57,11 @@ public class Event {
                 ')';
     }
 
+    /**
+     * Method used for checking the type of Event object.
+     *
+     * @return  A string containing the type (Lecture Hall or Laboratory).
+     */
     public String checkEventType() {
         if(this.getName().charAt(0) ==  'C') {
             return "Lecture Hall";

@@ -36,15 +36,21 @@ public class Lecture extends Room{
         this.capacity = capacity;
     }
 
+    @Override
     public String getRoomType() {
         return this.roomType;
     }
 
+    @Override
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
 
-
+    /**
+     * Method used to display an object.
+     *
+     * @return  A string representation of the object.
+     */
     @Override
     public String toString() {
         return this.getName() + '(' +
@@ -54,11 +60,17 @@ public class Lecture extends Room{
                 this.getVideoProjector() + ')';
     }
 
+    /**
+     * Overrode method used for comparing two Lecture objects by their name.
+     *
+     * @param obj   The object used for comparing.
+     * @return      True or false whether the objects are equal.
+     */
     @Override
     public boolean equals(Object obj) {
         if(obj == null) return false;
         if(!(obj instanceof Lecture)) return false;
         Lecture lecture = (Lecture)obj;
-        return (this.getName() == lecture.getName());
+        return (this.getName().equals(lecture.getName()));
     }
 }

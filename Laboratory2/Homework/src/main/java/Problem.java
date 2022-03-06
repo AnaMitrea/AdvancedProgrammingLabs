@@ -4,6 +4,12 @@ public class Problem {
     private ArrayList<Room> roomsList;
     private ArrayList<Event> eventsList;
 
+    /**
+     * Method used to add Room objects to a list.
+     * Adding an object is possible only if the object doesn't already exist in the list.
+     *
+     * @param obj   Room object to be added in the list.
+     */
     public void addRoom(Room obj) {
         for(Room room : roomsList) {
             if(room.equals(obj)) {
@@ -15,6 +21,12 @@ public class Problem {
         System.out.println("Added room " + obj.getName());
     }
 
+    /**
+     * Method used to add Event object to a list.
+     * Adding an object is possible only if the object doesn't already exist in the list.
+     * 
+     * @param obj   Event object to be added in the list.
+     */
     public void addEvent(Event obj) {
         for(Event event : eventsList) {
             if(event.equals(obj)) {
@@ -52,6 +64,9 @@ public class Problem {
         return this.eventsList;
     }
 
+    /**
+     * Method used as a constructor which shows how an instance of a problem looks.
+     */
     public Problem() {
         System.out.println("Created an instance.");
         this.roomsList = new ArrayList<Room>();

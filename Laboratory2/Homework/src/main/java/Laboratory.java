@@ -44,6 +44,11 @@ public class Laboratory extends Room{
         this.roomType = roomType;
     }
 
+    /**
+     * Method used to display an object.
+     *
+     * @return  A string representation of the object.
+     */
     @Override
     public String toString() {
         return this.getName() + '(' +
@@ -52,11 +57,17 @@ public class Laboratory extends Room{
                 ", " + this.getOperatingSystem() + ')';
     }
 
+    /**
+     * Overrode method used for comparing two Laboratory objects by their name.
+     *
+     * @param obj   The object used for comparing.
+     * @return      True or false whether the objects are equal.
+     */
     @Override
     public boolean equals(Object obj) {
         if(obj == null) return false;
         if(!(obj instanceof Laboratory)) return false;
         Laboratory laboratory = (Laboratory)obj;
-        return (this.getName() == laboratory.getName());
+        return (this.getName().equals(laboratory.getName()));
     }
 }

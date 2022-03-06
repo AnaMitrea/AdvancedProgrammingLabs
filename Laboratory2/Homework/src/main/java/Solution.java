@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Solution {
     private ArrayList<Event> sortedEvents;
@@ -10,6 +9,12 @@ public class Solution {
         this.sortedRooms = new ArrayList<Room>();
     }
 
+    /**
+     * Method used to initialize an array list which contains whether a Room object is available or not for using it.
+     *
+     * @param length    The number of existing rooms.
+     * @return          The array list containing only -1 values.
+     */
     public ArrayList<Integer> emptyAvailableRooms(int length) {
         ArrayList<Integer> availableRooms = new ArrayList<Integer>();
         for(int i = 0; i < length; i++) {
@@ -56,6 +61,11 @@ public class Solution {
         }
     }
 
+    /**
+     * Main method which contains the solution of the problem.
+     *
+     * @param args  The arguments.
+     */
     public static void main(String[] args) {
         Solution solution = new Solution();
         Problem problem = new Problem();
