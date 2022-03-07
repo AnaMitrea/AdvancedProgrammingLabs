@@ -26,9 +26,4 @@ Homework:
   * La Event: dupa start time
   * La Room: dupa capacitate
 - implementare algoritm minimizare numar de camere folosite
-
-
-
-TO DO:
-- 
-- alg pt bonus <br/>
+- creare Java documentation
