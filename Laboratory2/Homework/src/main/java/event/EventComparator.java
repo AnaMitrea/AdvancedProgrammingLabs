@@ -1,8 +1,10 @@
+package event;
+
 import java.util.Comparator;
 
 public class EventComparator implements Comparator<Event> {
     /**
-     * Method used as a comparator for Collection class. It compares two Event objects by their start time.
+     * Method used as a comparator for Collection class. It compares two event.Event objects by their start time.
      *
      * @param o1    First object.
      * @param o2    Second object.

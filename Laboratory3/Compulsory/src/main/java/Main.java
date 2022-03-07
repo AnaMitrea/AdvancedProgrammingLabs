@@ -21,6 +21,5 @@ public class Main {
             System.out.print(node.toString());
         }
         System.out.println();
-
     }
 }

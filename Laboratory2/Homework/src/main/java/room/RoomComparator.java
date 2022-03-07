@@ -1,8 +1,12 @@
+package room;
+
+import room.Room;
+
 import java.util.Comparator;
 
 public class RoomComparator implements Comparator<Room> {
     /**
-     * Method used as a comparator for Collection class. It compares two Room objects by their maximum capacity.
+     * Method used as a comparator for Collection class. It compares two room.Room objects by their maximum capacity.
      *
      * @param o1    First object.
      * @param o2    Second object.

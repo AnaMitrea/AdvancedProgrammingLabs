@@ -1,3 +1,8 @@
+import event.Event;
+import room.Laboratory;
+import room.Lecture;
+import room.Room;
+
 import java.util.ArrayList;
 
 public class Problem {
@@ -5,10 +10,10 @@ public class Problem {
     private ArrayList<Event> eventsList;
 
     /**
-     * Method used to add Room objects to a list.
+     * Method used to add room.Room objects to a list.
      * Adding an object is possible only if the object doesn't already exist in the list.
      *
-     * @param obj   Room object to be added in the list.
+     * @param obj   room.Room object to be added in the list.
      */
     public void addRoom(Room obj) {
         for(Room room : roomsList) {
@@ -22,10 +27,10 @@ public class Problem {
     }
 
     /**
-     * Method used to add Event object to a list.
+     * Method used to add event.Event object to a list.
      * Adding an object is possible only if the object doesn't already exist in the list.
      * 
-     * @param obj   Event object to be added in the list.
+     * @param obj   event.Event object to be added in the list.
      */
     public void addEvent(Event obj) {
         for(Event event : eventsList) {

@@ -1,19 +1,21 @@
-public class Laboratory extends Room{
-    private String operatingSystem;
+package room;
 
-    public Laboratory(String name, int capacity, String operatingSystem) {
+public class Lecture extends Room {
+    private boolean videoProjector;
+
+    public Lecture(String name, int capacity, boolean videoProjector) {
         this.name = name;
         this.capacity = capacity;
-        this.roomType = "Lab";
-        this.operatingSystem = operatingSystem;
+        this.roomType = "room.Lecture Hall";
+        this.videoProjector = videoProjector;
     }
 
-    public String getOperatingSystem() {
-        return operatingSystem;
+    public boolean getVideoProjector() {
+        return videoProjector;
     }
 
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
+    public void setVideoProjector(boolean videoProjector) {
+        this.videoProjector = videoProjector;
     }
 
     @Override
@@ -36,10 +38,12 @@ public class Laboratory extends Room{
         this.capacity = capacity;
     }
 
+    @Override
     public String getRoomType() {
         return this.roomType;
     }
 
+    @Override
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
@@ -54,11 +58,12 @@ public class Laboratory extends Room{
         return this.getName() + '(' +
                 "cap=" + this.getCapacity() +
                 ", " + this.getRoomType() +
-                ", " + this.getOperatingSystem() + ')';
+                ", " +  " Has video projector: " +
+                this.getVideoProjector() + ')';
     }
 
     /**
-     * Overrode method used for comparing two Laboratory objects by their name.
+     * Overrode method used for comparing two room.Lecture objects by their name.
      *
      * @param obj   The object used for comparing.
      * @return      True or false whether the objects are equal.
@@ -66,8 +71,8 @@ public class Laboratory extends Room{
     @Override
     public boolean equals(Object obj) {
         if(obj == null) return false;
-        if(!(obj instanceof Laboratory)) return false;
-        Laboratory laboratory = (Laboratory)obj;
-        return (this.getName().equals(laboratory.getName()));
+        if(!(obj instanceof Lecture)) return false;
+        Lecture lecture = (Lecture)obj;
+        return (this.getName().equals(lecture.getName()));
     }
 }

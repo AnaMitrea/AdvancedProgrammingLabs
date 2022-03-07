@@ -1,3 +1,5 @@
+package event;
+
 public class Event {
     private String name;
     private int capacity;
@@ -58,13 +60,13 @@ public class Event {
     }
 
     /**
-     * Method used for checking the type of Event object.
+     * Method used for checking the type of event.Event object.
      *
-     * @return  A string containing the type (Lecture Hall or Laboratory).
+     * @return  A string containing the type (room.Lecture Hall or room.Laboratory).
      */
     public String checkEventType() {
         if(this.getName().charAt(0) ==  'C') {
-            return "Lecture Hall";
+            return "room.Lecture Hall";
         }
         else
             return "Lab";

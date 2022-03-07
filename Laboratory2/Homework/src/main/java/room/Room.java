@@ -1,3 +1,5 @@
+package room;
+
 public abstract class Room {
     protected String name;
     protected int capacity;
