@@ -1,19 +1,6 @@
-public class Switch extends Node implements Identifiable{
-    private String address;
-
-    public Switch(String name, String address) {
+public class Switch extends Node{
+    public Switch(String name) {
         this.name = name;
-        this.address = address;
-    }
-
-    @Override
-    public String getAddress() {
-        return this.address;
-    }
-
-    @Override
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     @Override

@@ -1,6 +1,5 @@
 public class Router extends Node implements Identifiable{
     private String address;
-
     public Router(String name, String address) {
         this.name = name;
         this.address = address;
@@ -28,6 +27,6 @@ public class Router extends Node implements Identifiable{
 
     @Override
     public String toString() {
-        return this.name + "(Router) ";
+        return this.name + "(Router, addr= " + this.address + ") ";
     }
 }
