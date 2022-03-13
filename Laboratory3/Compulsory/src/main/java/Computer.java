@@ -1,8 +1,8 @@
 public class Computer extends Node implements Identifiable, Storage{
     private String address;
-    private int storageCapacity;
+    private double storageCapacity;
 
-    public Computer(String name, String address, int storageCapacity) {
+    public Computer(String name, String address, double storageCapacity) {
         this.name = name;
         this.address = address;
         this.storageCapacity = storageCapacity;
@@ -19,12 +19,12 @@ public class Computer extends Node implements Identifiable, Storage{
     }
 
     @Override
-    public int getStorageCapacity() {
+    public double getStorageCapacity() {
         return this.storageCapacity;
     }
 
     @Override
-    public void setStorageCapacity(int storageCapacity) {
+    public void setStorageCapacity(double storageCapacity) {
         this.storageCapacity = storageCapacity;
     }
 
@@ -40,6 +40,6 @@ public class Computer extends Node implements Identifiable, Storage{
 
     @Override
     public String toString() {
-        return this.name + "(Computer) ";
+        return this.name + "(Computer, addr= " + this.address + ", storage= " + this.storageCapacity + ") ";
     }
 }
