@@ -13,3 +13,7 @@ Compulsory
 - implementat setters, getters
 - implementat override peste compareTo la Node pentru funtia sort
 - implementat toString
+
+Homework
+-
+- .
