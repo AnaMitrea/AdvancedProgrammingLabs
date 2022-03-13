@@ -25,4 +25,15 @@ public class Network {
         }
         return sb.toString();
     }
+
+    public void printSortedIdentifiable() {
+        List<Node> identifiableNodes = new ArrayList<>();
+        for (Node node : this.nodes) {
+            if(node instanceof Computer || node instanceof Router) {
+                identifiableNodes.add(node);
+            }
+        }
+        identifiableNodes.sort(new NodeComparator());
+        System.out.println(identifiableNodes);
+    }
 }
