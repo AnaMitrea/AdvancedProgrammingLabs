@@ -1,4 +1,4 @@
-public interface Identifiable {
+public interface Identifiable{
     String getAddress();
     void setAddress(String address);
 }
