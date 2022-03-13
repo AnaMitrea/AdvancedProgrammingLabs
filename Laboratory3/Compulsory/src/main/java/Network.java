@@ -14,7 +14,15 @@ public class Network {
 
     public void addNode(Node node) {
         nodes.add(node);
+        nodes.sort(Node::compareTo);
     }
 
-    // toString etc
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        System.out.print("Locations are: ");
+        for (Node node : this.nodes) {
+            sb.append(node.toString());
+        }
+        return sb.toString();
+    }
 }

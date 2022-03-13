@@ -10,16 +10,12 @@ public class Main {
         Node v6 = new Computer("v6","addr6",16);
 
         network.addNode(v1);
+        network.addNode(v4);
         network.addNode(v2);
         network.addNode(v3);
-        network.addNode(v4);
-        network.addNode(v5);
         network.addNode(v6);
+        network.addNode(v5);
 
-        System.out.print("Locations are: ");
-        for(Node node : network.getNodes()) {
-            System.out.print(node.toString());
-        }
-        System.out.println();
+        System.out.println(network.toString());
     }
 }
