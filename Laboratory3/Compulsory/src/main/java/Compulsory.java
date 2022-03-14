@@ -1,4 +1,4 @@
-public class Main {
+public class Compulsory {
     public static void main(String[] args) {
         Network network = new Network();
 
@@ -17,7 +17,5 @@ public class Main {
         network.addNode(v5);
 
         System.out.println(network);
-
-        network.printSortedIdentifiable();
     }
 }
