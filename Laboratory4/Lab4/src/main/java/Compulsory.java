@@ -3,13 +3,13 @@ import java.util.stream.IntStream;
 
 public class Compulsory {
     public static void main(String[] args) {
-        var intersections = IntStream.rangeClosed(0, 8)
-                .mapToObj(i -> new Intersection("v" + i) )
-                .toArray(Intersection[]::new);
+        List<Intersection> intersections = IntStream.rangeClosed(0, 8)
+                .mapToObj(index -> new Intersection("v" + index)).toList();
+        System.out.println("Intersections: " + intersections);
 
         List<Street> streetList = new LinkedList<>();
-        for(int i = 0; i < 15; i++) {
-            streetList.add(new Street("s" + i, new Random().nextInt((3 - 1) + 1) + 1));
+        for(int index = 0; index < 15; index++) {
+            streetList.add(new Street("s" + index, new Random().nextInt((3 - 1) + 1) + 1));
         }
         System.out.println("Unsorted streetList: " + streetList);
 
@@ -19,5 +19,6 @@ public class Compulsory {
 
         Set<Street> streetHashSet = new HashSet<>(streetList);
         System.out.println("\nStreet set: " + streetHashSet);
+        streetHashSet.add(new Street("s0",2));
     }
 }
