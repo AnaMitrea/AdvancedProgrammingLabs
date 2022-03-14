@@ -1,4 +1,9 @@
-public class Computer extends Node implements Identifiable, Storage{
+package Nodes;
+
+import Interfaces.Identifiable;
+import Interfaces.Storage;
+
+public class Computer extends Node implements Identifiable, Storage {
     private String address;
     private double storageCapacity;
 
@@ -40,6 +45,6 @@ public class Computer extends Node implements Identifiable, Storage{
 
     @Override
     public String toString() {
-        return this.name + "(Computer, addr= " + this.address + ", storage= " + this.storageCapacity + ") ";
+        return this.name + "(Nodes.Computer, addr= " + this.address + ", storage= " + this.storageCapacity + ") ";
     }
 }

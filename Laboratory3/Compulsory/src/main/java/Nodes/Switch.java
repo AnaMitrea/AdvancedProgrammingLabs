@@ -1,4 +1,6 @@
-public class Switch extends Node{
+package Nodes;
+
+public class Switch extends Node {
     public Switch(String name) {
         this.name = name;
     }
@@ -15,6 +17,6 @@ public class Switch extends Node{
 
     @Override
     public String toString() {
-        return this.name + "(Switch) ";
+        return this.name + "(Nodes.Switch) ";
     }
 }

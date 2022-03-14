@@ -1,11 +1,14 @@
+import Dijkstra.Dijkstra;
+import Nodes.*;
+
 public class Homework {
     public static void main(String[] args) {
-        Node v1 = new Computer("v1", "14.8.100.105",8);
+        Node v1 = new Computer("v1", "14.8.100.105",10);
         Node v2 = new Router("v2","201.215.143.255");
         Node v3 = new Switch("v3");
         Node v4 = new Switch("v4");
         Node v5 = new Router("v5","245.212.14.137");
-        Node v6 = new Computer("v6","177.122.47.180",16);
+        Node v6 = new Computer("v6","177.122.47.180",8);
 
         v1.setCost(v2,10);
         v1.setCost(v3,50);
@@ -39,10 +42,9 @@ public class Homework {
         network.printSortedIdentifiable();
 
         Dijkstra dijkstra = new Dijkstra();
-        Node startingNode = v3;
-        network = dijkstra.calculateShortestPathFromSource(network, startingNode);
+        network = dijkstra.calculateShortestPathFromSource(network, v3);
 
-        System.out.println("Costs from " + startingNode.getName() + ": ");
-        dijkstra.printPathsAndCosts(network, startingNode);
+        System.out.println("Costs from " + v3.getName() + ": ");
+        dijkstra.printPathsAndCosts(network, v3);
     }
 }

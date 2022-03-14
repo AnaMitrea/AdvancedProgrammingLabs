@@ -1,4 +1,8 @@
-public class Router extends Node implements Identifiable{
+package Nodes;
+
+import Interfaces.Identifiable;
+
+public class Router extends Node implements Identifiable {
     private String address;
     public Router(String name, String address) {
         this.name = name;
@@ -27,6 +31,6 @@ public class Router extends Node implements Identifiable{
 
     @Override
     public String toString() {
-        return this.name + "(Router, addr= " + this.address + ") ";
+        return this.name + "(Nodes.Router, addr= " + this.address + ") ";
     }
 }
