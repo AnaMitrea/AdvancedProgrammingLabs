@@ -1,5 +1,6 @@
 import Dijkstra.Dijkstra;
-import Nodes.*;
+import Network.*;
+import Network.Nodes.*;
 
 public class Homework {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Nodes;
+package Network.Nodes;
 
 import java.util.HashMap;
 import java.util.LinkedList;

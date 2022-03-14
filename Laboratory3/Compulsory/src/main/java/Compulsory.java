@@ -1,4 +1,5 @@
-import Nodes.*;
+import Network.*;
+import Network.Nodes.*;
 
 public class Compulsory {
     public static void main(String[] args) {

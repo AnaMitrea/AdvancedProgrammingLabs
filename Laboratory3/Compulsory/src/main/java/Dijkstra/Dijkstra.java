@@ -1,7 +1,7 @@
 package Dijkstra;
 
-import Nodes.Network;
-import Nodes.Node;
+import Network.Network;
+import Network.Nodes.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
