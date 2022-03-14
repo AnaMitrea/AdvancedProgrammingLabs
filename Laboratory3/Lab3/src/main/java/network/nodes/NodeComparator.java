@@ -1,8 +1,11 @@
-package Network.Nodes;
+package network.nodes;
 
-import Interfaces.Identifiable;
+import interfaces.Identifiable;
 import java.util.Comparator;
 
+/**
+ * Method used for comparing two addresses of two Node objects.
+ */
 public class NodeComparator implements Comparator<Node> {
     @Override
     public int compare(Node o1, Node o2) {

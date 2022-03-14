@@ -1,6 +1,6 @@
-import Dijkstra.Dijkstra;
-import Network.*;
-import Network.Nodes.*;
+import dijkstra.Dijkstra;
+import network.*;
+import network.nodes.*;
 
 public class Homework {
     public static void main(String[] args) {

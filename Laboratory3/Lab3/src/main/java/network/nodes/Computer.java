@@ -1,7 +1,7 @@
-package Network.Nodes;
+package network.nodes;
 
-import Interfaces.Identifiable;
-import Interfaces.Storage;
+import interfaces.Identifiable;
+import interfaces.Storage;
 
 public class Computer extends Node implements Identifiable, Storage {
     private String address;

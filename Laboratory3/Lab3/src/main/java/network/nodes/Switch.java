@@ -1,4 +1,4 @@
-package Network.Nodes;
+package network.nodes;
 
 public class Switch extends Node {
     public Switch(String name) {

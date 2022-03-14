@@ -1,4 +1,4 @@
-package Network.Nodes;
+package network.nodes;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,8 +8,8 @@ import java.util.Map;
 public abstract class Node implements Comparable<Node>{
     protected String name;
     protected Map<Node,Integer> cost = new HashMap<>();
-    protected Integer distance = Integer.MAX_VALUE;
     protected List<Node> shortestPath = new LinkedList<>();
+    protected Integer distance = Integer.MAX_VALUE;
 
     abstract public String getName();
     abstract public void setName(String name);

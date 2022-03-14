@@ -1,9 +1,9 @@
-package Network;
+package network;
 
-import Network.Nodes.Computer;
-import Network.Nodes.Node;
-import Network.Nodes.NodeComparator;
-import Network.Nodes.Router;
+import network.nodes.Computer;
+import network.nodes.Node;
+import network.nodes.NodeComparator;
+import network.nodes.Router;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package Network.Nodes;
+package network.nodes;
 
-import Interfaces.Identifiable;
+import interfaces.Identifiable;
 
 public class Router extends Node implements Identifiable {
     private String address;
