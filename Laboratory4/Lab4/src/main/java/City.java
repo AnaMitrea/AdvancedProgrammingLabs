@@ -4,17 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 public class City {
-    private Map<Intersection, List<Street>> cityMap = new HashMap<>();
+    public Map<Intersection, List<Street>> cityMap;
 
-    public Map<Intersection, List<Street>> getCityMap() {
-        return cityMap;
-    }
+    public City(List<Street> streetList, List<Intersection> intersections) {
+        this.cityMap = new HashMap<>();
 
-    public void setCityMap(Map<Intersection, List<Street>> cityMap) {
-        this.cityMap = cityMap;
-    }
-
-    public void createCityMap(List<Street> streetList, List<Intersection> intersections) {
         cityMap.put(intersections.get(0), Arrays.asList(streetList.get(0), streetList.get(1), streetList.get(2)));
         cityMap.put(intersections.get(1), Arrays.asList(streetList.get(0), streetList.get(3), streetList.get(4)));
         cityMap.put(intersections.get(2), Arrays.asList(streetList.get(1), streetList.get(4), streetList.get(5), streetList.get(6), streetList.get(7)));
@@ -31,7 +25,10 @@ public class City {
         return "CityMap: " + cityMap;
     }
 
-    public Integer computeNumberOfStreets(List<Street> list) {
-        return list.size();
+    public void filterStream(int length) {
+        System.out.println();
+        cityMap.values().stream()
+                .filter(s -> s.size() >= length)
+                .forEach(System.out::println);
     }
 }
