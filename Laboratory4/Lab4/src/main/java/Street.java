@@ -15,7 +15,7 @@ public class Street {
         this.name = name;
     }
 
-    public Integer getLength() {
+    public int getLength() {
         return length;
     }
 
