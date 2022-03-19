@@ -30,4 +30,8 @@ public class City {
     public String toString() {
         return "CityMap: " + cityMap;
     }
+
+    public Integer computeNumberOfStreets(List<Street> list) {
+        return list.size();
+    }
 }

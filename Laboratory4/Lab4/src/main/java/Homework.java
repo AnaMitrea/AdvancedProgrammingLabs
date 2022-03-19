@@ -23,5 +23,15 @@ public class Homework {
         city.createCityMap(streetList,intersections);
         System.out.println(city);
 
+        System.out.println("Filtering...");
+        /*
+        intersections.stream()
+                .filter(v -> city.getCityMap().get(v).contains(streetList.get(2)))
+                .forEach(System.out::println);
+        */
+        System.out.println("Filtering... Only intersections which join >=4 streets");
+        intersections.stream()
+                .filter(v -> city.computeNumberOfStreets(city.getCityMap().get(v)) >=4)
+                .forEach(System.out::println);
     }
 }
