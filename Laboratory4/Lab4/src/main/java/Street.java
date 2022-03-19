@@ -25,10 +25,7 @@ public class Street {
 
     @Override
     public String toString() {
-        return "Street(" +
-                name +
-                ", " + length +
-                "km) ";
+        return "St(" + name + ", " + length +  "km)";
     }
 
 

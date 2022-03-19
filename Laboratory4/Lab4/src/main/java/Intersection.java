@@ -17,8 +17,7 @@ public class Intersection {
 
     @Override
     public String toString() {
-        return "Intersection(" +
-                name + ") ";
+        return "Inters(" + name + ")";
     }
 
     @Override
@@ -33,4 +32,6 @@ public class Intersection {
     public int hashCode() {
         return Objects.hash(name);
     }
+
+
 }
