@@ -14,7 +14,7 @@ public class Compulsory {
         System.out.println("Unsorted streetList: " + streetList);
 
         List<Street> sortedStreetList = new LinkedList<>(streetList);
-        sortedStreetList.sort(((u, v) -> u.getLength().compareTo(v.getLength())));
+        sortedStreetList.sort(((u, v) -> Integer.compare(u.getLength(),v.getLength())));
         System.out.println("\nSorted streetList: " + sortedStreetList);
 
         Set<Street> streetHashSet = new HashSet<>(streetList);
