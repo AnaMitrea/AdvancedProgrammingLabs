@@ -25,10 +25,13 @@ public class City {
         return "CityMap: " + cityMap;
     }
 
+    //TODO: Filter
     public void filterStream(int length) {
         System.out.println();
         cityMap.values().stream()
                 .filter(s -> s.size() >= length)
                 .forEach(System.out::println);
     }
+
+    //TODO Kruskal
 }
