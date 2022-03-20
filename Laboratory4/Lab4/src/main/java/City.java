@@ -42,7 +42,6 @@ public class City {
         return "CityMap: " + cityMap;
     }
 
-    //TODO: Filter
     public void filterStream(List<Street> streetList, int length) {
         System.out.println();
         streetList.stream()
@@ -51,5 +50,4 @@ public class City {
                 .forEach(System.out::println);
     }
 
-    //TODO Kruskal
 }

@@ -11,15 +11,22 @@ public class Homework {
         Faker faker = new Faker();
 
         List<Intersection> intersections = IntStream.rangeClosed(0, 8).mapToObj(index -> new Intersection("v" + index)).toList();
-        System.out.println("Intersections: \n" + intersections);
 
         List<Street> streetList = new LinkedList<>();
         for(int index = 0; index <= 15; index++) {
-            streetList.add(new Street(faker.address().streetName(), new Random().nextInt((5 - 1) + 1) + 1));
+            streetList.add(new Street(faker.address().streetName(), new Random().nextInt((3 - 1) + 1) + 1));
         }
-        System.out.println("Unsorted streetList: \n" + streetList);
 
         City city = new City(streetList,intersections);
+        System.out.println("\nCityMap: " + city.cityMap);
         city.filterStream(streetList, 4);
+
+        List<Street> sortedStreetList = new LinkedList<>(streetList);
+        sortedStreetList.sort(((u, v) -> Integer.compare(u.getLength(),v.getLength())));
+        //System.out.println("\nSorted streetList: " + sortedStreetList);
+
+        Kruskal kruskal = new Kruskal(city.cityMap);
+        System.out.println("MST: " + kruskal.kruskalAlgorithm(sortedStreetList));
+
     }
 }
