@@ -37,6 +37,4 @@ public class Street {
     public String toString() {
         return "St(" + name + ", " + length +  "km)";
     }
-
-
 }

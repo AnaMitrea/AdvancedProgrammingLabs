@@ -49,5 +49,4 @@ public class City {
                 .filter(str -> str.getNrAdjacentStreets() >= 3)
                 .forEach(System.out::println);
     }
-
 }

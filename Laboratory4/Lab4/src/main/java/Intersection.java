@@ -32,6 +32,4 @@ public class Intersection {
     public int hashCode() {
         return Objects.hash(name);
     }
-
-
 }
