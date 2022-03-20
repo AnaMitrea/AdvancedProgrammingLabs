@@ -20,6 +20,6 @@ public class Homework {
         System.out.println("Unsorted streetList: \n" + streetList);
 
         City city = new City(streetList,intersections);
-        city.filterStream(4);
+        city.filterStream(streetList, 4);
     }
 }

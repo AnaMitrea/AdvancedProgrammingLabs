@@ -18,6 +18,23 @@ public class City {
         cityMap.put(intersections.get(6), Arrays.asList(streetList.get(5), streetList.get(12), streetList.get(13)));
         cityMap.put(intersections.get(7), Arrays.asList(streetList.get(9), streetList.get(12), streetList.get(15)));
         cityMap.put(intersections.get(8), Arrays.asList(streetList.get(10), streetList.get(13), streetList.get(14), streetList.get(15)));
+
+        streetList.get(0).setNrAdjacentStreets(4);
+        streetList.get(1).setNrAdjacentStreets(6);
+        streetList.get(2).setNrAdjacentStreets(4);
+        streetList.get(3).setNrAdjacentStreets(5);
+        streetList.get(4).setNrAdjacentStreets(6);
+        streetList.get(5).setNrAdjacentStreets(6);
+        streetList.get(6).setNrAdjacentStreets(7);
+        streetList.get(7).setNrAdjacentStreets(6);
+        streetList.get(8).setNrAdjacentStreets(5);
+        streetList.get(9).setNrAdjacentStreets(5);
+        streetList.get(10).setNrAdjacentStreets(6);
+        streetList.get(11).setNrAdjacentStreets(6);
+        streetList.get(12).setNrAdjacentStreets(5);
+        streetList.get(13).setNrAdjacentStreets(5);
+        streetList.get(14).setNrAdjacentStreets(6);
+        streetList.get(15).setNrAdjacentStreets(5);
     }
 
     @Override
@@ -26,10 +43,11 @@ public class City {
     }
 
     //TODO: Filter
-    public void filterStream(int length) {
+    public void filterStream(List<Street> streetList, int length) {
         System.out.println();
-        cityMap.values().stream()
-                .filter(s -> s.size() >= length)
+        streetList.stream()
+                .filter(str -> str.getLength() >= length)
+                .filter(str -> str.getNrAdjacentStreets() >= 3)
                 .forEach(System.out::println);
     }
 
