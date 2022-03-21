@@ -5,6 +5,10 @@ public class Catalog {
     private String name;
     private List<Item> items = new ArrayList<>();
 
+    public Catalog(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -39,8 +43,6 @@ public class Catalog {
 
     @Override
     public String toString() {
-        return "Catalog(" + name +  ", " + items + ")\n";
+        return "Catalog(" + name +  " : " + items + ")\n";
     }
-
-
 }

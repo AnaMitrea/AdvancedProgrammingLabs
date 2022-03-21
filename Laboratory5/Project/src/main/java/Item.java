@@ -1,29 +1,19 @@
 public abstract class Item {
-    private String id;
-    private String title;
-    private String location;
+    protected String id;
+    protected String title;
+    protected String location;
+    protected String year;
+    protected String author;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
+    abstract public String toString();
+    abstract public String getId();
+    abstract public void setId(String id);
+    abstract public String getTitle();
+    abstract public void setTitle(String title);
+    abstract public String getLocation();
+    abstract public void setLocation(String location);
+    abstract public String getYear();
+    abstract public void setYear(String year);
+    abstract public String getAuthor();
+    abstract public void setAuthor(String author);
 }
