@@ -10,4 +10,4 @@ Compulsory
 
 Homework
 -
-![Graf](Laboratory4/Graf-Lab4.png)
+![Graf](https://github.com/AnaMitrea/AdvancedProgrammingLabs/blob/39f0387cc0d104d88cda07672353c7c80acd146a/Laboratory4/Graf-Lab4.png)
