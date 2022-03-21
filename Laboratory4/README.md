@@ -10,4 +10,4 @@ Compulsory
 
 Homework
 -
-![Graf](https://github.com/AnaMitrea/AdvancedProgrammingLabs/blob/39f0387cc0d104d88cda07672353c7c80acd146a/Laboratory4/Graf-Lab4.png)
+![Graful utilizat in cod](https://github.com/AnaMitrea/AdvancedProgrammingLabs/blob/39f0387cc0d104d88cda07672353c7c80acd146a/Laboratory4/Graf-Lab4.png)
