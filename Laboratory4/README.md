@@ -10,6 +10,8 @@ Compulsory
 
 Homework
 -
+- ![#f03c15](Cifre Rosii: Numerotarea Nodurilor)
+- ![#1589F0](Cifre Albastre : Numerotarea muchiilor)
 ![Graful utilizat in cod](https://github.com/AnaMitrea/AdvancedProgrammingLabs/blob/39f0387cc0d104d88cda07672353c7c80acd146a/Laboratory4/Graf-Lab4.png)
 - Creat clasele specifice:
   - Street  (Muchiile)
