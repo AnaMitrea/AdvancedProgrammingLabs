@@ -1,3 +1,5 @@
+import graph.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Kruskal {
     /**
      * Method used for setting the root of an intersection.
      * @param inters        Key of the root map
-     * @param toBetSet      Intersection value of the root map
+     * @param toBetSet      Graph.Intersection value of the root map
      */
     public void setRoot(Intersection inters, Intersection toBetSet) {
         root.put(inters,toBetSet);
@@ -45,7 +47,7 @@ public class Kruskal {
 
     /**
      * Method used for finding the two intersections (nodes) which joins a street (edge).
-     * @param street        Street
+     * @param street        Graph.Street
      * @return              A list of 2 intersections.
      */
     public List<Intersection> findIntersectionsOfStreet(Street street) {

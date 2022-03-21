@@ -1,3 +1,5 @@
+package graph;
+
 public class Street {
     private String name;
     private int length;

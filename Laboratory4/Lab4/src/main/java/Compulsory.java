@@ -1,3 +1,6 @@
+import graph.Intersection;
+import graph.Street;
+
 import java.util.*;
 import java.util.stream.IntStream;
 
@@ -18,7 +21,7 @@ public class Compulsory {
         System.out.println("\nSorted streetList: " + sortedStreetList);
 
         Set<Street> streetHashSet = new HashSet<>(streetList);
-        System.out.println("\nStreet set: " + streetHashSet);
+        System.out.println("\nGraph.Street set: " + streetHashSet);
         streetHashSet.add(new Street("s0",2));
     }
 }

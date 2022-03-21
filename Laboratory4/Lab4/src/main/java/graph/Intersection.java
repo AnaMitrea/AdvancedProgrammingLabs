@@ -1,3 +1,5 @@
+package graph;
+
 import java.util.Objects;
 
 public class Intersection {
@@ -20,6 +22,11 @@ public class Intersection {
         return "Inters(" + name + ")";
     }
 
+    /**
+     * Method used for eliminating the possibility to add duplicates by comparing their name and the hash codes.
+     * @param o     The object to be compared.
+     * @return      A boolean value, true/false.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,6 +35,10 @@ public class Intersection {
         return Objects.equals(name, that.name);
     }
 
+    /**
+     * Method used for returning the hash code.
+     * @return      Hash code
+     */
     @Override
     public int hashCode() {
         return Objects.hash(name);

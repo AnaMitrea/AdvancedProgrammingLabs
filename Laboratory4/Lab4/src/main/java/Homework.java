@@ -1,3 +1,4 @@
+import graph.*;
 import com.github.javafaker.Faker;
 
 import java.util.LinkedList;
@@ -9,15 +10,27 @@ public class Homework {
     List<Intersection> intersections;
     List<Street> streetList;
 
+    /**
+     * Main constructor used for calling the generating methods for the streets and intersections.
+     */
     public Homework() {
         intersections = generateIntersections();
         streetList = generateStreets();
     }
 
+    /**
+     * Method used for generating the list of intersections. In total: 9 intersections with indexes starting from 0 and ending with 8.
+     * @return  List of intersections.
+     */
     public List<Intersection> generateIntersections() {
         return IntStream.rangeClosed(0, 8).mapToObj(index -> new Intersection("v" + index)).toList();
     }
 
+    /**
+     * Method used for generating the list of streets. The street addresses are randomly generated using an external library - Faker.<br>
+     * In total: 16 streets, using indexes starting from 0 and ending with 15 to identify them more easily.
+     * @return      The list of streets.
+     */
     public List<Street> generateStreets() {
         Faker faker = new Faker();
         List<Street> streetList = new LinkedList<>();
@@ -27,6 +40,11 @@ public class Homework {
         return streetList;
     }
 
+    /**
+     * Method used for sorting (ascending) a list of streets by their lengths.
+     * @param streetList        The list of streets.
+     * @return                  The sorted list.
+     */
     public List<Street> sortStreetList(List<Street> streetList) {
         List<Street> sortedStreetList = new LinkedList<>(streetList);
         sortedStreetList.sort(((u, v) -> Integer.compare(u.getLength(),v.getLength())));
