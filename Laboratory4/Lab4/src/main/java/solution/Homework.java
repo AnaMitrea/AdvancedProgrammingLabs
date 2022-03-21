@@ -1,3 +1,6 @@
+package solution;
+
+import algorithm.kruskal.Kruskal;
 import graph.*;
 import com.github.javafaker.Faker;
 

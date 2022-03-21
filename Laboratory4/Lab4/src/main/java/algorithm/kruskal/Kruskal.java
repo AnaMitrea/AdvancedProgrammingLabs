@@ -1,3 +1,5 @@
+package algorithm.kruskal;
+
 import graph.*;
 
 import java.util.ArrayList;
@@ -76,7 +78,7 @@ public class Kruskal {
     }
 
     /**
-     * Kruskal algorithm which initially uses a sorted list of streets by their cost (street lengths).
+     * algorithm.kruskal.Kruskal algorithm which initially uses a sorted list of streets by their cost (street lengths).
      * @param sortedStreets     Sorted list of streets
      * @return                  The list of chosen streets by the algorithm.
      */

@@ -1,3 +1,5 @@
+package solution;
+
 import graph.Intersection;
 import graph.Street;
 
