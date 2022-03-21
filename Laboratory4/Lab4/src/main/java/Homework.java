@@ -23,7 +23,8 @@ public class Homework {
      * @return  List of intersections.
      */
     public List<Intersection> generateIntersections() {
-        return IntStream.rangeClosed(0, 8).mapToObj(index -> new Intersection("v" + index)).toList();
+        Faker faker = new Faker();
+        return IntStream.rangeClosed(0, 8).mapToObj(index -> new Intersection(faker.address().streetAddressNumber())).toList();
     }
 
     /**
