@@ -71,7 +71,7 @@ public class Article extends Item{
     @Override
     public String toString() {
         return "\nArticle(" +
-                "journalTitle:" + journalTitle +
+                "journalTitle:'" + journalTitle + '\'' +
                 ", id:'" + id + '\'' +
                 ", title:'" + title + '\'' +
                 ", location:'" + location + '\'' +
