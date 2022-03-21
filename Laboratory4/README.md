@@ -10,4 +10,4 @@ Compulsory
 
 Homework
 -
-- .
+![Graf](Laboratory4/Graf-Lab4.png)
