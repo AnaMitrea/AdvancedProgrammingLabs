@@ -1,1 +1,11 @@
-
+Compulsory
+-
+- Creat clase specifice:
+  - Catalog
+  - Item : clasa abstrata
+      - Book : clasa mostenita
+      - Article : clasa mostenita
+- Compulsory : clasa main
+- setters si getters
+- toString la fiecare clasa
+- in clasa Catalog; findById si addItem
