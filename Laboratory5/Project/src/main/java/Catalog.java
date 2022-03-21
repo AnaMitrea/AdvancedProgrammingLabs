@@ -45,4 +45,6 @@ public class Catalog {
     public String toString() {
         return "Catalog(" + name +  " : " + items + ")\n";
     }
+
+    //TODO: save si load cu JSON
 }
