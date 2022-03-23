@@ -1,4 +1,8 @@
-public class Article extends Item{
+package catalog.item.bibliographic_reference;
+
+import catalog.item.Item;
+
+public class Article extends Item {
     private String journalTitle;
 
     public Article(String id, String title, String location, String year, String author, String journalTitle) {
@@ -70,13 +74,13 @@ public class Article extends Item{
 
     @Override
     public String toString() {
-        return "\nArticle(" +
+        return "\nitem.bibliographic_reference.Article(" +
                 "journalTitle:'" + journalTitle + '\'' +
                 ", id:'" + id + '\'' +
                 ", title:'" + title + '\'' +
                 ", location:'" + location + '\'' +
                 ", year:'" + year + '\'' +
                 ", author:'" + author + '\'' +
-                ")";
+                ")\n";
     }
 }

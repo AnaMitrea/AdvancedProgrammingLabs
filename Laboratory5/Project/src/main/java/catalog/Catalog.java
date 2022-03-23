@@ -1,3 +1,7 @@
+package catalog;
+
+import catalog.item.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +47,6 @@ public class Catalog {
 
     @Override
     public String toString() {
-        return "Catalog(" + name +  " : " + items + ")\n";
+        return "catalog.Catalog(" + name +  " : " + items + ")\n";
     }
-
-    //TODO: save si load cu JSON
 }

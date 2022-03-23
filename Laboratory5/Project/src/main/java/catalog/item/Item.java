@@ -1,3 +1,5 @@
+package catalog.item;
+
 public abstract class Item {
     protected String id;
     protected String title;
