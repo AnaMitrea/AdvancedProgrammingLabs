@@ -1,9 +1,4 @@
 
 *.class
-Laboratory5/Project/.idea/.name
-Laboratory5/Project/.idea/compiler.xml
-Laboratory5/Project/.idea/inspectionProfiles/Project_Default.xml
-Laboratory5/Project/.idea/jarRepositories.xml
-Laboratory5/Project/.idea/misc.xml
-Laboratory5/Project/.idea/uiDesigner.xml
-Laboratory5/Project/.idea/vcs.xml
+*.name
+*.xml
