@@ -1,16 +1,20 @@
 package catalog;
 
-import catalog.item.Item;
-
+import item.Item;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Catalog {
     private String name;
-    private List<Item> items = new ArrayList<>();
+    private List<Item> items;
 
-    public Catalog(String name) {
+    public Catalog(String name, List<Item> items) {
         this.name = name;
+        this.items = items;
+    }
+
+    public Catalog() {
+        items = new ArrayList<>();
     }
 
     public String getName() {
