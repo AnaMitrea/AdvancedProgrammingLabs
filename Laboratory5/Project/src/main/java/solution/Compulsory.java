@@ -19,9 +19,9 @@ public class Compulsory {
 
         Item article = new Article("java17","The Java Language Specification","https://docs.oracle.com/javase/specs/jls/se17/html/index.html","2021", "James Gosling & others", "JournalTitle1");
         catalog.add(article);
-        CatalogUtil.save(catalog,"target/catalog.json");
+        CatalogUtil.saveCatalog(catalog,"target/catalog.json");
 
-        Catalog newCatalog = CatalogUtil.load("target/catalog.json");;
+        Catalog newCatalog = CatalogUtil.loadCatalog("target/catalog.json");;
         System.out.println(newCatalog);
     }
 }
