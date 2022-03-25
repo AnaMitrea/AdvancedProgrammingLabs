@@ -1,5 +1,5 @@
 {
-  "name" : "Books & Articles",
+  "name" : "My Catalog",
   "items" : [ {
     "type" : "Book",
     "id" : "knuth67",
