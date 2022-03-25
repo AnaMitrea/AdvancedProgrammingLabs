@@ -1,11 +1,10 @@
 package solution;
 
 import catalog.Catalog;
-import catalog.util.CatalogUtil;
+import utility.CatalogUtil;
 import item.Item;
 import item.bibliographic_reference.Article;
 import item.bibliographic_reference.Book;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +19,9 @@ public class Compulsory {
 
         Item article = new Article("java17","The Java Language Specification","https://docs.oracle.com/javase/specs/jls/se17/html/index.html","2021", "James Gosling & others", "JournalTitle1");
         catalog.add(article);
-
         CatalogUtil.save(catalog,"target/catalog.json");
 
-        //TODO
-        Catalog newCatalog = null;
-        newCatalog = CatalogUtil.load("target/catalog.json");
-
+        Catalog newCatalog = CatalogUtil.load("target/catalog.json");;
         System.out.println(newCatalog);
     }
 }
