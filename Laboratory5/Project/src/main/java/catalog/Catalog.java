@@ -38,6 +38,7 @@ public class Catalog {
         this.items = items;
     }
 
+    //TODO exceptie daca item e null
     public void add(Item item) {
         items.add(item);
     }

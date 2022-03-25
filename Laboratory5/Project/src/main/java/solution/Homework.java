@@ -21,6 +21,11 @@ public class Homework {
         listCommand.list(catalog);
 
         ViewCommand viewCommand = new ViewCommand();
-        viewCommand.view("catalog.json");
+        viewCommand.describeCommand();
+        //viewCommand.view("catalog.json");
+
+        ReportCommand reportCommand = new ReportCommand();
+        reportCommand.describeCommand();
+        reportCommand.report(catalog);
     }
 }

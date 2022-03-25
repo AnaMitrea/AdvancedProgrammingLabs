@@ -29,13 +29,13 @@ public class Book extends Item {
 
     @Override
     public String toString() {
-        return "\nBook(" +
+        return "Book(" +
                 "publishingHouse:'" + publishingHouse + '\'' +
                 ", id:'" + id + '\'' +
                 ", title:'" + title + '\'' +
                 ", location:'" + location + '\'' +
                 ", year:'" + year + '\'' +
                 ", author:'" + author + '\'' +
-                ")\n";
+                ")";
     }
 }

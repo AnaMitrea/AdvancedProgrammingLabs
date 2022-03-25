@@ -29,13 +29,13 @@ public class Article extends Item {
 
     @Override
     public String toString() {
-        return "\nArticle(" +
+        return "Article(" +
                 "journalTitle:'" + journalTitle + '\'' +
                 ", id:'" + id + '\'' +
                 ", title:'" + title + '\'' +
                 ", location:'" + location + '\'' +
                 ", year:'" + year + '\'' +
                 ", author:'" + author + '\'' +
-                ")\n";
+                ")";
     }
 }
