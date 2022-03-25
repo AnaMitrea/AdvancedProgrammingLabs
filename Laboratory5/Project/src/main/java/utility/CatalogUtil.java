@@ -2,19 +2,25 @@ package utility;
 
 import catalog.Catalog;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import item.Item;
+
 import java.io.File;
 import java.io.IOException;
 
 public class CatalogUtil {
-    public static void save(Catalog catalog, String path) throws IOException {
+    public static void saveCatalog(Catalog catalog, String path) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(path),catalog);
     }
 
-    public static Catalog load(String path) throws IOException {
+    public static void saveItem(Item item, String path) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(path),item);
+    }
+
+    public static Catalog loadCatalog(String path) throws IOException {
         Catalog catalog = null;
         ObjectMapper objectMapper = new ObjectMapper();
-        catalog = objectMapper.readValue(new File(path), Catalog.class);
 
         try {
             catalog = objectMapper.readValue(new File(path), Catalog.class);
@@ -22,5 +28,17 @@ public class CatalogUtil {
             e.printStackTrace();
         }
         return catalog;
+    }
+
+    public static Item loadItem(String path) throws IOException {
+        Item item = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            item = objectMapper.readValue(new File(path), Item.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return item;
     }
 }
