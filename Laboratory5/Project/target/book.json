@@ -1,0 +1,9 @@
+{
+  "type" : "Book",
+  "id" : "knuth67",
+  "title" : "The Art of Computer Programming",
+  "location" : "d:/books/programming/tacp.ps",
+  "year" : "1967",
+  "author" : "Donald E. Knuth",
+  "publishingHouse" : "PublishingHouse1"
+}
