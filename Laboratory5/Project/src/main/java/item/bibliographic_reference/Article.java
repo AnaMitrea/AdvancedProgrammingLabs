@@ -29,7 +29,7 @@ public class Article extends Item {
 
     @Override
     public String toString() {
-        return "Article(" +
+        return "\nArticle(" +
                 "journalTitle:'" + journalTitle + '\'' +
                 ", id:'" + id + '\'' +
                 ", title:'" + title + '\'' +

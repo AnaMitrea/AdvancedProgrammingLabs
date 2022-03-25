@@ -29,7 +29,7 @@ public class Book extends Item {
 
     @Override
     public String toString() {
-        return "Book(" +
+        return "\nBook(" +
                 "publishingHouse:'" + publishingHouse + '\'' +
                 ", id:'" + id + '\'' +
                 ", title:'" + title + '\'' +

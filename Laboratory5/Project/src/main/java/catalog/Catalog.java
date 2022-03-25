@@ -13,6 +13,11 @@ public class Catalog {
         this.items = items;
     }
 
+    public Catalog(String name) {
+        this.name = name;
+        this.items = new ArrayList<>();
+    }
+
     public Catalog() {
         items = new ArrayList<>();
     }
@@ -51,6 +56,6 @@ public class Catalog {
 
     @Override
     public String toString() {
-        return "catalog.Catalog(" + name +  " : " + items + ")\n";
+        return "Catalog(" + name +  " : " + items + ")\n";
     }
 }

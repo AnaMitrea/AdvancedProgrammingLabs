@@ -1,4 +1,4 @@
-package catalog.util;
+package utility;
 
 import catalog.Catalog;
 import com.fasterxml.jackson.databind.ObjectMapper;
