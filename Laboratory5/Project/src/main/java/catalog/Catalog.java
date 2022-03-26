@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Catalog {
-    private String name;
-    private List<Item> items;
+    public String name;
+    public List<Item> items;
 
     public Catalog(String name, List<Item> items) {
         this.name = name;

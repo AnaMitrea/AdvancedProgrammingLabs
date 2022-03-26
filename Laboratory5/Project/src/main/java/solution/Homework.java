@@ -3,9 +3,12 @@ package solution;
 import catalog.*;
 import commands.*;
 import exceptions.CustomException;
+import freemarker.template.TemplateException;
 import item.Item;
 import item.bibliographic_reference.*;
 import utility.CatalogUtil;
+
+import java.io.IOException;
 
 public class Homework {
     public static void addItemsIntoCatalog(Catalog catalog) throws CustomException {
@@ -34,20 +37,21 @@ public class Homework {
         //viewCommand.view(path);
     }
 
-    public static void reportCatalog(Catalog catalog) {
-        ReportCommand reportCommand = new ReportCommand();
+    public static void reportCatalog(Catalog catalog) throws TemplateException, CustomException, IOException {
+        ReportCommand reportCommand = new ReportCommand(catalog);
         reportCommand.describeCommand();
         reportCommand.report(catalog);
+        //reportCommand.makeReport();
     }
 
-    public static void main(String[] args) throws CustomException {
-        Catalog catalog = new Catalog("My Catalog");
+    public static void main(String[] args) throws CustomException, TemplateException, IOException {
+        Catalog catalog = new Catalog("My first catalog");
         addItemsIntoCatalog(catalog);
 
         CatalogUtil.saveCatalog(catalog,"target/json-files/catalog.json");
 
-        listItemsFromCatalog(catalog);
-        viewItemsFromCatalog("target/json-files/catalog.json");
+        //listItemsFromCatalog(catalog);
+        //viewItemsFromCatalog("target/json-files/catalog.json");
         reportCatalog(catalog);
     }
 }
