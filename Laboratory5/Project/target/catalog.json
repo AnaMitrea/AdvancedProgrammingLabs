@@ -1,0 +1,28 @@
+{
+  "name" : "My Catalog",
+  "items" : [ {
+    "type" : "Book",
+    "id" : "knuth67",
+    "title" : "The Art of Computer Programming",
+    "location" : "d:/books/programming/tacp.ps",
+    "year" : "1967",
+    "author" : "Donald E. Knuth",
+    "publishingHouse" : "PublishingHouse1"
+  }, {
+    "type" : "Article",
+    "id" : "java17",
+    "title" : "The Java Language Specification",
+    "location" : "https://docs.oracle.com/javase/specs/jls/se17/html/index.html",
+    "year" : "2021",
+    "author" : "James Gosling & others",
+    "journalTitle" : "JournalTitle1"
+  }, {
+    "type" : "Book",
+    "id" : "lordrings1",
+    "title" : "The Lord of the Rings",
+    "location" : "d:/books/fantasy/tlor.ps",
+    "year" : "1955",
+    "author" : "J.R.R Tolkien",
+    "publishingHouse" : "Allen & Unwin"
+  } ]
+}
