@@ -9,3 +9,29 @@ Compulsory
 - setters si getters
 - toString la fiecare clasa
 - in clasa Catalog; findById si addItem
+
+Homework
+-
+- Creat pachete si clase specifice:
+    - catalog
+      - Catalog
+    - commands
+      - AddCommand
+      - Command
+      - ListCommand
+      - ReportCommand
+      - ViewCommand
+    - exceptions
+      - CustomException 
+    - item si bibliographic_reference
+      - Item
+      - Article
+      - Book 
+    - solution
+      - Compulsory
+      - Homework 
+    - utility
+      - CatalogUtil
+- implementat load si save objects de tip Catalog, respectiv Item, in fisiere .json
+- implementat generare raport html dintr-un template folosit FreeMarker Apache
+- generat artifact pentru fisierul jar
