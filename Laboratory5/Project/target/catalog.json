@@ -16,5 +16,13 @@
     "year" : "2021",
     "author" : "James Gosling & others",
     "journalTitle" : "JournalTitle1"
+  }, {
+    "type" : "Book",
+    "id" : "lordrings1",
+    "title" : "The Lord of the Rings",
+    "location" : "d:/books/fantasy/tlor.ps",
+    "year" : "1955",
+    "author" : "J.R.R Tolkien",
+    "publishingHouse" : "Allen & Unwin"
   } ]
 }

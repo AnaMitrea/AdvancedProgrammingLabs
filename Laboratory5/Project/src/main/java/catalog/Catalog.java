@@ -1,5 +1,6 @@
 package catalog;
 
+import exceptions.CustomException;
 import item.Item;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,10 @@ public class Catalog {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws CustomException {
+        if(name == null) {
+            throw new CustomException("Cannot assign a null name to the object.");
+        }
         this.name = name;
     }
 
@@ -38,8 +42,10 @@ public class Catalog {
         this.items = items;
     }
 
-    //TODO exceptie daca item e null
-    public void add(Item item) {
+    public void add(Item item) throws CustomException {
+        if(item == null) {
+            throw new CustomException("Cannot add a null item in the catalog.");
+        }
         items.add(item);
     }
 
