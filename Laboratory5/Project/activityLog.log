@@ -1,0 +1,5 @@
+26 mar. 2022 18:38:16,891 main - Couldn't find template in cache for "templateFile.ftl"("en_US", UTF-8, parsed); will try to load it.
+26 mar. 2022 18:38:16,892 main - TemplateLoader.findTemplateSource("templateFile_en_US.ftl"): Not found
+26 mar. 2022 18:38:16,893 main - TemplateLoader.findTemplateSource("templateFile_en.ftl"): Not found
+26 mar. 2022 18:38:16,894 main - TemplateLoader.findTemplateSource("templateFile.ftl"): Found
+26 mar. 2022 18:38:16,895 main - Loading template for "templateFile.ftl"("en_US", UTF-8, parsed) from "C:\\Users\\Ana\\Documents\\GitHub\\AdvancedProgrammingLabs\\Laboratory5\\Project\\target\\templates\\templateFile.ftl"
