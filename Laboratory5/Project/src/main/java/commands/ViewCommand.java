@@ -15,8 +15,12 @@ public class ViewCommand extends Command{
         System.out.println("The " + name + " command " + description);
     }
 
+    /**
+     * Method used for opening a default Windows application for reading a specified file in the path.
+     * @param path      File path
+     */
     public void view(String path){
-        File file = new File("target/" + path);
+        File file = new File(path);
         try {
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);

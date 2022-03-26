@@ -19,6 +19,10 @@ public class ReportCommand extends Command{
         System.out.println("The " + name + " command " + description);
     }
 
+    /**
+     * Method used for generating an HTML report using Apache FreeMarker dependency
+     * @param catalog       Catalog object
+     */
     public void report(Catalog catalog){
         System.out.print("\nCreating HTML Report...");
         try{
