@@ -21,6 +21,7 @@ Homework
       - ListCommand
       - ReportCommand
       - ViewCommand
+      - InfoCommand
     - exceptions
       - CustomException 
     - item si bibliographic_reference
@@ -35,3 +36,4 @@ Homework
 - implementat load si save objects de tip Catalog, respectiv Item, in fisiere .json
 - implementat generare raport html dintr-un template folosit FreeMarker Apache
 - generat artifact pentru fisierul jar
+- implementat afisare metadata fisiere .html folosind Apache Tika
