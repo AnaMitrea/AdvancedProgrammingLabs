@@ -30,7 +30,6 @@ public class InfoCommand extends Command{
             FileInputStream inputStream = new FileInputStream(new File("target/templates/raportCatalog.html"));
             ParseContext pContext = new ParseContext();
 
-            //Html parser
             HtmlParser htmlparser = new HtmlParser();
             htmlparser.parse(inputStream, handler, metadata,pContext);
             System.out.println("\nContents of the document:" + handler.toString());
