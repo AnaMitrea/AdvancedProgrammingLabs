@@ -3,19 +3,14 @@ package commands;
 import catalog.Catalog;
 import exceptions.CustomException;
 import freemarker.template.*;
-import item.Item;
-
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ReportCommand extends Command{
-    public ReportCommand(Catalog catalog) {
+    public ReportCommand() {
         this.name = "Report";
         this.description = "creates and opens an HTML report representing the content of the catalog.";
     }
@@ -60,5 +55,4 @@ public class ReportCommand extends Command{
         }
         System.out.println("Successfully created the HTML report.");
     }
-
 }

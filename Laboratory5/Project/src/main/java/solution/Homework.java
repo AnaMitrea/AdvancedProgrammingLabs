@@ -6,6 +6,8 @@ import exceptions.CustomException;
 import freemarker.template.TemplateException;
 import item.Item;
 import item.bibliographic_reference.*;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
 import utility.CatalogUtil;
 
 import java.io.IOException;
@@ -38,20 +40,26 @@ public class Homework {
     }
 
     public static void reportCatalog(Catalog catalog) throws TemplateException, CustomException, IOException {
-        ReportCommand reportCommand = new ReportCommand(catalog);
+        ReportCommand reportCommand = new ReportCommand();
         reportCommand.describeCommand();
         reportCommand.report(catalog);
-        //reportCommand.makeReport();
     }
 
-    public static void main(String[] args) throws CustomException, TemplateException, IOException {
+    public static void infoCatalog() throws TikaException, IOException, SAXException, CustomException {
+        InfoCommand infoCommand = new InfoCommand();
+        infoCommand.describeCommand();
+        infoCommand.info();
+    }
+
+    public static void main(String[] args) throws CustomException, TemplateException, IOException, TikaException, SAXException {
         Catalog catalog = new Catalog("My first catalog");
         addItemsIntoCatalog(catalog);
 
         CatalogUtil.saveCatalog(catalog,"target/json-files/catalog.json");
 
-        //listItemsFromCatalog(catalog);
-        //viewItemsFromCatalog("target/json-files/catalog.json");
+        listItemsFromCatalog(catalog);
+        viewItemsFromCatalog("target/json-files/catalog.json");
         reportCatalog(catalog);
+        infoCatalog();
     }
 }
