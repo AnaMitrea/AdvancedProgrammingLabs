@@ -2,17 +2,21 @@ package utility;
 
 import catalog.Catalog;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import exceptions.CustomException;
 import item.Item;
 
 import java.io.File;
 import java.io.IOException;
 
 public class CatalogUtil {
-    public static void saveCatalog(Catalog catalog, String path) throws IOException {
+    public static void saveCatalog(Catalog catalog, String path) throws CustomException {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
+            if(catalog == null) {
+                throw new CustomException("Error: Cannot save catalog.");
+            }
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), catalog);
-        }catch (IOException e) {
+        }catch(IOException e) {
             e.printStackTrace();
         }
     }

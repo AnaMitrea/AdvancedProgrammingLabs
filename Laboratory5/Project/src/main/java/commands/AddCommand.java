@@ -1,6 +1,7 @@
 package commands;
 
 import catalog.Catalog;
+import exceptions.CustomException;
 import item.Item;
 
 public class AddCommand extends Command{
@@ -14,7 +15,10 @@ public class AddCommand extends Command{
         System.out.println("The " + name + " command " + description);
     }
 
-    public void add(Catalog catalog, Item item) {
+    public void add(Catalog catalog, Item item) throws CustomException {
+        if(item == null) {
+            throw new CustomException("Cannot add a null item in the catalog.");
+        }
         catalog.getItems().add(item);
     }
 }

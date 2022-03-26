@@ -20,13 +20,15 @@ public class ReportCommand extends Command{
     }
 
     public void report(Catalog catalog){
+        System.out.print("\nCreating HTML Report...");
         try{
             Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
             cfg.setDirectoryForTemplateLoading(new File("target/templates"));
 
             Template template = cfg.getTemplate("templateFile.ftlh");
-            Writer out = new OutputStreamWriter(new FileOutputStream("templateFile.html"));
+            Writer out = new OutputStreamWriter(new FileOutputStream("target/templates/templateFile.html"));
             template.process(catalog, out);
+            System.out.println(" Successfully created the report.");
 
         }catch(Exception e){
             System.out.println(e.getMessage());

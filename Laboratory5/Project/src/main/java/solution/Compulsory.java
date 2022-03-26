@@ -1,6 +1,7 @@
 package solution;
 
 import catalog.Catalog;
+import exceptions.CustomException;
 import utility.CatalogUtil;
 import item.Item;
 import item.bibliographic_reference.Article;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Compulsory {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CustomException {
         Item book = new Book("knuth67","The Art of Computer Programming","d:/books/programming/tacp.ps", "1967", "Donald E. Knuth", "PublishingHouse1");
         List<Item> itemList = new ArrayList<>();
         itemList.add(book);
