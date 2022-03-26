@@ -31,7 +31,7 @@ public class Homework {
     public static void viewItemsFromCatalog(String path) {
         ViewCommand viewCommand = new ViewCommand();
         viewCommand.describeCommand();
-        viewCommand.view(path);
+        //viewCommand.view(path);
     }
 
     public static void reportCatalog(Catalog catalog) {
