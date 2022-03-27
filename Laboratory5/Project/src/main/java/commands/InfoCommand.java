@@ -17,6 +17,9 @@ public class InfoCommand extends Command{
         System.out.println("The " + name + " command " + description);
     }
 
+    /**
+     * Method used for getting the metadata and the contents of a html file using Apache Tika.
+     */
     public void info() {
         System.out.println("Getting the metadata of the HTML report...");
         BodyContentHandler handler = new BodyContentHandler();
@@ -32,7 +35,7 @@ public class InfoCommand extends Command{
             String[] metadataNames = metadata.names();
 
             for(String name : metadataNames) {
-                System.out.println(name + ":   " + metadata.get(name));
+                System.out.println(name + ": " + metadata.get(name));
             }
         } catch(Exception e) {
             e.printStackTrace();

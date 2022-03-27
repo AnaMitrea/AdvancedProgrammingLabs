@@ -14,6 +14,10 @@ public class ListCommand extends Command{
         System.out.println("The " + name + " command " + description);
     }
 
+    /**
+     * Method used for listing the items of a catalog.
+     * @param catalog   Catalog object
+     */
     public void list(Catalog catalog) {
         try {
             if(catalog == null) {
