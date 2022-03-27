@@ -19,12 +19,19 @@ public class AddCommand extends Command{
      * Adds an item in a specified catalog only if the item is not null.
      * @param catalog               Catalog object
      * @param item                  Item to be addes
-     * @throws CustomException      Custom Exception
      */
-    public void add(Catalog catalog, Item item) throws CustomException {
-        if(item == null) {
-            throw new CustomException("Cannot add a null item in the catalog.");
+    public void add(Catalog catalog, Item item){
+        try {
+            if(catalog == null) {
+                throw new CustomException("Catalog is null. Cannot add item.");
+            }
+            if(item == null) {
+                throw new CustomException("Cannot add a null item in the catalog.");
+            }
+            catalog.getItems().add(item);
+        }catch(Exception e) {
+            e.printStackTrace();
         }
-        catalog.getItems().add(item);
+
     }
 }

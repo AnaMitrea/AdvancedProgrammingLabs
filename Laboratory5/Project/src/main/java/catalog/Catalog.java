@@ -27,11 +27,15 @@ public class Catalog {
         return name;
     }
 
-    public void setName(String name) throws CustomException {
-        if(name == null) {
-            throw new CustomException("Cannot assign a null name to the object.");
+    public void setName(String name){
+        try {
+            if(name == null) {
+                throw new CustomException("Cannot assign a null name to the object.");
+            }
+            this.name = name;
+        }catch(Exception e) {
+            e.printStackTrace();
         }
-        this.name = name;
     }
 
     public List<Item> getItems() {
@@ -42,11 +46,16 @@ public class Catalog {
         this.items = items;
     }
 
-    public void add(Item item) throws CustomException {
-        if(item == null) {
-            throw new CustomException("Cannot add a null item in the catalog.");
+    public void add(Item item){
+        try {
+            if(item == null) {
+                throw new CustomException("Cannot add a null item in the catalog.");
+            }
+            items.add(item);
+        }catch(Exception e) {
+            e.printStackTrace();
         }
-        items.add(item);
+
     }
 
     /**

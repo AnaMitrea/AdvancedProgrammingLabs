@@ -2,18 +2,11 @@ package solution;
 
 import catalog.*;
 import commands.*;
-import exceptions.CustomException;
-import freemarker.template.TemplateException;
 import item.Item;
 import item.bibliographic_reference.*;
-import org.apache.tika.exception.TikaException;
-import org.xml.sax.SAXException;
-import utility.CatalogUtil;
-
-import java.io.IOException;
 
 public class Homework {
-    public static void addItemsIntoCatalog(Catalog catalog) throws CustomException {
+    public static void addItemsIntoCatalog(Catalog catalog){
         Item book1 = new Book("knuth67","The Art of Computer Programming","d:/books/programming/tacp.ps", "1967", "Donald E. Knuth", "PublishingHouse1");
         Item article = new Article("java17","The Java Language Specification","https://docs.oracle.com/javase/specs/jls/se17/html/index.html","2021", "James Gosling & others", "JournalTitle1");
         Item book2 = new Book("lordrings1","The Lord of the Rings","d:/books/fantasy/tlor.ps","1955","J.R.R Tolkien","Allen & Unwin");
@@ -39,26 +32,26 @@ public class Homework {
         viewCommand.view(path);
     }
 
-    public static void reportCatalog(Catalog catalog) throws TemplateException, CustomException, IOException {
+    public static void reportCatalog(Catalog catalog){
         ReportCommand reportCommand = new ReportCommand();
         reportCommand.describeCommand();
         reportCommand.report(catalog);
     }
 
-    public static void infoCatalog() throws TikaException, IOException, SAXException, CustomException {
+    public static void infoCatalog() {
         InfoCommand infoCommand = new InfoCommand();
         infoCommand.describeCommand();
         infoCommand.info();
     }
 
-    public static void main(String[] args) throws CustomException, TemplateException, IOException, TikaException, SAXException {
+    public static void main(String[] args){
         Catalog catalog = new Catalog("My first catalog");
         addItemsIntoCatalog(catalog);
 
         CatalogUtil.saveCatalog(catalog,"target/json-files/catalog.json");
 
         listItemsFromCatalog(catalog);
-        viewItemsFromCatalog("target/json-files/catalog.json");
+        //viewItemsFromCatalog("target/json-files/catalog.json");
         reportCatalog(catalog);
         infoCatalog();
     }

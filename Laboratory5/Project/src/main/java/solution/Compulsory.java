@@ -2,7 +2,7 @@ package solution;
 
 import catalog.Catalog;
 import exceptions.CustomException;
-import utility.CatalogUtil;
+import catalog.CatalogUtil;
 import item.Item;
 import item.bibliographic_reference.Article;
 import item.bibliographic_reference.Book;

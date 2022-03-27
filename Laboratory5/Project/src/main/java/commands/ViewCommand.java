@@ -24,10 +24,8 @@ public class ViewCommand extends Command{
         try {
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
+        } catch(Exception e) {
+           e.printStackTrace();
         }
-       catch(Exception e) {
-           System.out.println(e.getMessage());
-       }
-
     }
 }

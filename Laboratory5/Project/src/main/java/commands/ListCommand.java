@@ -1,6 +1,7 @@
 package commands;
 
 import catalog.Catalog;
+import exceptions.CustomException;
 
 public class ListCommand extends Command{
     public ListCommand() {
@@ -14,6 +15,16 @@ public class ListCommand extends Command{
     }
 
     public void list(Catalog catalog) {
-        System.out.println(catalog.getItems());
+        try {
+            if(catalog == null) {
+                throw new CustomException("Cannot list a null catalog.");
+            }
+            if(catalog.getItems() == null) {
+                throw new CustomException("Cannot list null items.");
+            }
+            System.out.println(catalog.getItems());
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -21,7 +21,7 @@ public class ReportCommand extends Command{
     }
 
     /**
-     * Method used for generating an HTML report using Apache FreeMarker dependency
+     * Method used for generating an HTML report using Apache FreeMarker dependency.
      */
     public void report(Catalog catalog){
         System.out.print("\nCreating HTML Report...");
@@ -36,23 +36,19 @@ public class ReportCommand extends Command{
             templateInfo.put("catalog_name",catalog.getName());
             templateInfo.put("items",catalog.getItems());
 
-            try(StringWriter out = new StringWriter()) {
-                template.process(templateInfo, out);
-                try {
-                    FileWriter file = new FileWriter("target/templates/raportCatalog.html");
+            StringWriter out = new StringWriter();
+            template.process(templateInfo, out);
+            FileWriter file = new FileWriter("target/templates/raportCatalog.html");
 
-                    file.write(out.getBuffer().toString());
-                    file.close();
-                }catch(Exception e) {
-                    throw new CustomException("Error: Cannot write to html file",e);
-                }
-                out.flush();
-            }catch(Exception e) {
-                throw new CustomException("Error: Cannot write to template",e);
-            }
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+            file.write(out.getBuffer().toString());
+            file.close();
+            out.flush();
+        } catch(Exception e) {
+            e.printStackTrace();
         }
         System.out.println("Successfully created the HTML report.");
+
+        ViewCommand viewCommand = new ViewCommand();
+        viewCommand.view("target/templates/raportCatalog.html");
     }
 }
