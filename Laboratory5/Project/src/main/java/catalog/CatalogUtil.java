@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import exceptions.CustomException;
 import item.Item;
 import java.io.File;
-import java.io.IOException;
 
 public class CatalogUtil {
     /**

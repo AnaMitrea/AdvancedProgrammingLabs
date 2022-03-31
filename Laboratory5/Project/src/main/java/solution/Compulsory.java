@@ -1,17 +1,13 @@
 package solution;
 
-import catalog.Catalog;
-import exceptions.CustomException;
-import catalog.CatalogUtil;
-import item.Item;
-import item.bibliographic_reference.Article;
-import item.bibliographic_reference.Book;
-import java.io.IOException;
+import catalog.*;
+import item.*;
+import item.bibliographic_reference.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Compulsory {
-    public static void main(String[] args) throws IOException, CustomException {
+    public static void main(String[] args){
         Item book = new Book("knuth67","The Art of Computer Programming","d:/books/programming/tacp.ps", "1967", "Donald E. Knuth", "PublishingHouse1");
         List<Item> itemList = new ArrayList<>();
         itemList.add(book);

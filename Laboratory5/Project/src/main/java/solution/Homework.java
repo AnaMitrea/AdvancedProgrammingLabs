@@ -16,8 +16,6 @@ public class Homework {
         addCommand.add(catalog,book1);
         addCommand.add(catalog,article);
         addCommand.add(catalog,book2);
-        // Exception:
-        // addCommand.add(catalog,null);
     }
 
     public static void listItemsFromCatalog(Catalog catalog) {
@@ -51,7 +49,7 @@ public class Homework {
         CatalogUtil.saveCatalog(catalog,"target/json-files/catalog.json");
 
         listItemsFromCatalog(catalog);
-        //viewItemsFromCatalog("target/json-files/catalog.json");
+        viewItemsFromCatalog("target/json-files/catalog.json");
         reportCatalog(catalog);
         infoCatalog();
     }

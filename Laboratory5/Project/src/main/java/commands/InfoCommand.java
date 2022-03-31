@@ -30,8 +30,8 @@ public class InfoCommand extends Command{
 
             HtmlParser htmlparser = new HtmlParser();
             htmlparser.parse(inputStream, handler, metadata,pContext);
-            System.out.println("\nContents of the document:" + handler);
-            System.out.println("Metadata of the document:");
+            System.out.println("\nContents of the html report:" + handler);
+            System.out.println("Metadata of the html file:");
             String[] metadataNames = metadata.names();
 
             for(String name : metadataNames) {
