@@ -1,7 +1,6 @@
 package commands;
 
 import java.awt.*;
-
 import java.io.File;
 
 public class ViewCommand extends Command{
