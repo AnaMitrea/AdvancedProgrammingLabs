@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab6.Controller">
+   <children>
+      <HBox accessibleText="Grid_Size_Controls" alignment="CENTER" prefHeight="52.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: WHITE;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Size:" />
+            <Spinner fx:id="leftSpinner" max="10" min="3" prefHeight="25.0" prefWidth="86.0" />
+            <Spinner fx:id="rightSpinner" max="10" min="3" prefHeight="25.0" prefWidth="86.0" />
+            <Button mnemonicParsing="false" onAction="#onCreateButtonClick" prefHeight="30.0" prefWidth="75.0" text="Create">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Pane accessibleText="Canvas" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="550.0" prefWidth="600.0">
+         <children>
+            <Line endX="477.0" layoutX="123.0" startX="-123.0" />
+            <Line endX="477.00006103515625" endY="100.0" layoutX="123.0" layoutY="445.0" startX="-123.0" startY="100.0" />
+         </children>
+      </Pane>
+      <HBox accessibleText="Load_Save_Controls" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: WHITE;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onLoadButtonClick" prefHeight="25.0" prefWidth="73.0" text="Load">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#onSaveButtonClick" prefHeight="25.0" prefWidth="73.0" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
