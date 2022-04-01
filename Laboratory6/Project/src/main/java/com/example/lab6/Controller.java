@@ -7,6 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
+import java.util.Random;
+
 public class Controller {
     @FXML private Pane canvasID;
     @FXML private Spinner<Integer> leftSpinner;
@@ -48,6 +50,14 @@ public class Controller {
         }
     }
 
+    protected int generateRandomNr() {
+        Random r = new Random();
+        int low = 0;
+        int high = 5;
+        int result = r.nextInt(high-low) + low;
+        return result;
+    }
+
     /**
      * Method used to generate the grid (matrix form) of the game.
      */
@@ -64,21 +74,38 @@ public class Controller {
 
             for(int column = 0; column < rightSpVal; column++) {
                 if(column < (rightSpVal - 1)) {
+                    int probability = generateRandomNr();
+
                     Line horizontalLine = new Line();
                     horizontalLine.setStartX(startValueX);
                     horizontalLine.setStartY(startValueY);
                     horizontalLine.setEndX(startValueX + segmentX);
                     horizontalLine.setEndY(startValueY);
-                    horizontalLine.setStrokeWidth(1.0);
+
+                    if(probability >= 2) {
+                        horizontalLine.setStrokeWidth(10);
+                    }
+                    else {
+                        horizontalLine.setStrokeWidth(0.5);
+                    }
+
                     canvasID.getChildren().add(horizontalLine);
                 }
                 if(line < (leftSpVal - 1)) {
+                    int probability = generateRandomNr();
+
                     Line verticalLine = new Line();
                     verticalLine.setStartX(startValueX);
                     verticalLine.setStartY(startValueY);
                     verticalLine.setEndX(startValueX);
                     verticalLine.setEndY(startValueY + segmentY);
-                    verticalLine.setStrokeWidth(1.0);
+
+                    if(probability >= 2) {
+                        verticalLine.setStrokeWidth(10);
+                    }
+                    else {
+                        verticalLine.setStrokeWidth(0.5);
+                    }
                     canvasID.getChildren().add(verticalLine);
                 }
                 startValueX += segmentX;
