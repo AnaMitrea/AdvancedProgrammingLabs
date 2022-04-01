@@ -1,23 +1,11 @@
 package com.example.lab6;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
-import java.io.File;
-import java.io.IOException;
-
 import javafx.fxml.FXML;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Spinner;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.stage.FileChooser;
-
-import static java.awt.image.BufferedImage.TYPE_INT_RGB;
+import javafx.scene.shape.Line;
 
 public class Controller {
     @FXML private Pane canvasID;
@@ -33,16 +21,14 @@ public class Controller {
         circle.setStroke(Color.LIGHTGREY);
     }
 
+    /**
+     * Method used to generate the circles on the grid.
+     */
     protected void generateCircles() {
         int leftSpVal = leftSpinner.getValue();
         int rightSpVal = rightSpinner.getValue();
-        System.out.println("L&R values" + leftSpVal + " " + rightSpVal);
-
         int segmentX = panelWidth / rightSpVal;
         int segmentY = panelHeight / leftSpVal;
-
-        System.out.println(segmentX + " " + segmentY);
-
         int startValueX;
         int startValueY = segmentY / 2;
 
@@ -62,12 +48,52 @@ public class Controller {
         }
     }
 
+    /**
+     * Method used to generate the grid (matrix form) of the game.
+     */
+    protected void generateGrid() {
+        int leftSpVal = leftSpinner.getValue();
+        int rightSpVal = rightSpinner.getValue();
+        int segmentX = panelWidth / rightSpVal;
+        int segmentY = panelHeight / leftSpVal;
+        int startValueX;
+        int startValueY = segmentY / 2;
+
+        for(int line = 0; line < leftSpVal; line++) {
+            startValueX = segmentX / 2;
+
+            for(int column = 0; column < rightSpVal; column++) {
+                if(column < (rightSpVal - 1)) {
+                    Line horizontalLine = new Line();
+                    horizontalLine.setStartX(startValueX);
+                    horizontalLine.setStartY(startValueY);
+                    horizontalLine.setEndX(startValueX + segmentX);
+                    horizontalLine.setEndY(startValueY);
+                    horizontalLine.setStrokeWidth(1.0);
+                    canvasID.getChildren().add(horizontalLine);
+                }
+                if(line < (leftSpVal - 1)) {
+                    Line verticalLine = new Line();
+                    verticalLine.setStartX(startValueX);
+                    verticalLine.setStartY(startValueY);
+                    verticalLine.setEndX(startValueX);
+                    verticalLine.setEndY(startValueY + segmentY);
+                    verticalLine.setStrokeWidth(1.0);
+                    canvasID.getChildren().add(verticalLine);
+                }
+                startValueX += segmentX;
+            }
+            startValueY += segmentY;
+        }
+    }
+
     @FXML
     protected void onCreateButtonClick() {
         System.out.println("Create button");
         canvasID.getChildren().clear();
 
         generateCircles();
+        generateGrid();
     }
 
     @FXML
