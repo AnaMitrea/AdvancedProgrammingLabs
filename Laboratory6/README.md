@@ -9,3 +9,4 @@ Compulsory
 Homework
 -
 - generat stickuri aleatoriu
+- implementat schimbarea culorilor cand sa apasa pe cercuri
