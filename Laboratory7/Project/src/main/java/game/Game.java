@@ -13,7 +13,7 @@ public class Game {
     private final Board board = new Board(this);
     private final Dictionary dictionary = new Dictionary();
     private final List<Player> players = new ArrayList<>();
-    private boolean gameFinished = false;
+    private boolean gameFinished;
 
     public Bag getBag() {
         return bag;

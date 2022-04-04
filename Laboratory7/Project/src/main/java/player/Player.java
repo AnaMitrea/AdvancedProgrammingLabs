@@ -50,32 +50,24 @@ public class Player implements Runnable{
         this.score = score;
     }
 
-    public String readWord(List<Tile> extracted) {
-        System.out.println("[" + name + "]-Your letters are " + extracted);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Submit word: ");
-        return scanner.nextLine();
-    }
-
-    public boolean verifySubmitedWord(List<Tile> extracted, String word) {
-        StringBuilder sb = new StringBuilder(word);
-
-
-        return true;
-    }
-
-
     private boolean submitWord() {
         List<Tile> extracted = game.getBag().extractTiles(7);
         if (extracted.isEmpty()) {
             return false;
         }
-        String word = readWord(extracted);
+
+        System.out.println("[" + name + "]-Your letters are " + extracted);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Submit word: ");
+        String word = scanner.nextLine();
 
         while(word.equals("") || word.equals(" ")) {
             extracted = game.getBag().extractTiles(7);
-            word = readWord(extracted);
+
+            System.out.println("[" + name + "]-Your letters are " + extracted);
+            System.out.print("Submit word: ");
+            word = scanner.nextLine();
+
             if (extracted.isEmpty()) {
                 game.setGameFinished(true);
                 return false;
@@ -92,16 +84,11 @@ public class Player implements Runnable{
 
     @Override
     public void run() {
-        while(!game.getGameFinished()) {
-            running = true;
+        running = true;
+        //while(!game.getGameFinished())
             synchronized (game) {
-                if(!submitWord()) {
-                    game.setGameFinished(true);
-                    System.out.println("Game finished!");
-                    return;
-                }
+                submitWord();
             }
-       }
         running = false;
     }
 }
