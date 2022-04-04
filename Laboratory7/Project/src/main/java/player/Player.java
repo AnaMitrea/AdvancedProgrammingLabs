@@ -50,6 +50,12 @@ public class Player implements Runnable{
         this.score = score;
     }
 
+    public String readWord() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Submit word: ");
+        return scanner.nextLine();
+    }
+
     private boolean submitWord() {
         List<Tile> extracted = game.getBag().extractTiles(7);
         if (extracted.isEmpty()) {
@@ -57,16 +63,13 @@ public class Player implements Runnable{
         }
 
         System.out.println("[" + name + "]-Your letters are " + extracted);
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Submit word: ");
-        String word = scanner.nextLine();
+        String word = readWord();
 
         while(word.equals("") || word.equals(" ")) {
             extracted = game.getBag().extractTiles(7);
 
             System.out.println("[" + name + "]-Your letters are " + extracted);
-            System.out.print("Submit word: ");
-            word = scanner.nextLine();
+            word = readWord();
 
             if (extracted.isEmpty()) {
                 game.setGameFinished(true);

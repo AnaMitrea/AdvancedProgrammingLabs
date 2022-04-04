@@ -24,7 +24,7 @@ public class Bag {
         Collections.shuffle(letters);
     }
 
-    //TODO : Each player extracts 7 tiles from the bag
+    //TODO : Each player extracts 7 tiles from the bag`
     public synchronized List<Tile> extractTiles(int howMany) {
         List<Tile> extracted = new ArrayList<>();
         for(int index = 0; index < howMany; index++) {
