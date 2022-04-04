@@ -1,5 +1,6 @@
 package com.example.lab6;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Spinner;
 import javafx.scene.layout.Pane;
@@ -21,6 +22,19 @@ public class Controller {
         circle.setFill(Color.WHITE);
         circle.setStrokeWidth(2.0);
         circle.setStroke(Color.LIGHTGREY);
+
+        circle.setOnMouseClicked(event -> {
+            Color currentFill = (Color) circle.getFill();
+            if (Color.WHITE.equals(currentFill)) {
+                circle.setFill(Color.RED);
+            } else {
+                if (Color.RED.equals(currentFill)) {
+                    circle.setFill(Color.BLUE);
+                } else if (Color.BLUE.equals(currentFill)) {
+                    circle.setFill(Color.RED);
+                }
+            }
+        });
     }
 
     /**
@@ -42,7 +56,6 @@ public class Controller {
                 circle.setCenterX(startValueX);
                 circle.setCenterY(startValueY);
                 setCircleFeatures(circle);
-
                 canvasID.getChildren().add(circle);
                 startValueX += segmentX;
             }
@@ -83,7 +96,7 @@ public class Controller {
                     horizontalLine.setEndY(startValueY);
 
                     if(probability >= 2) {
-                        horizontalLine.setStrokeWidth(10);
+                        horizontalLine.setStrokeWidth(7);
                     }
                     else {
                         horizontalLine.setStrokeWidth(0.5);
@@ -101,7 +114,7 @@ public class Controller {
                     verticalLine.setEndY(startValueY + segmentY);
 
                     if(probability >= 2) {
-                        verticalLine.setStrokeWidth(10);
+                        verticalLine.setStrokeWidth(7);
                     }
                     else {
                         verticalLine.setStrokeWidth(0.5);
@@ -119,8 +132,8 @@ public class Controller {
         System.out.println("Create button");
         canvasID.getChildren().clear();
 
-        generateCircles();
         generateGrid();
+        generateCircles();
     }
 
     @FXML
