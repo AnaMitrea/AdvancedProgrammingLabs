@@ -5,3 +5,7 @@ Compulsory
 - creat main frame
 - creat control panel
 - creat configuration panel
+
+Homework
+-
+- generat stickuri aleatoriu
