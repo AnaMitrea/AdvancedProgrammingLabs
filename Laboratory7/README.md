@@ -1,3 +1,11 @@
 Compulsory
 -
-- .
+- creat clasele:
+  - Game
+  - Player
+  - Bag
+  - Board
+  - Dictionary
+  - Tile
+  - Compulsory: Main class
+- creat thread-uri pentru fiecare jucator 
