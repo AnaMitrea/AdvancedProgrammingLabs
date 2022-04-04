@@ -16,6 +16,7 @@ public class Controller {
     @FXML private Spinner<Integer> rightSpinner;
     private final int panelWidth = 600;
     private final int panelHeight = 550;
+    private int playerTurn = 0;
 
     protected void setCircleFeatures(Circle circle) {
         circle.setRadius(15);
@@ -26,12 +27,13 @@ public class Controller {
         circle.setOnMouseClicked(event -> {
             Color currentFill = (Color) circle.getFill();
             if (Color.WHITE.equals(currentFill)) {
-                circle.setFill(Color.RED);
-            } else {
-                if (Color.RED.equals(currentFill)) {
-                    circle.setFill(Color.BLUE);
-                } else if (Color.BLUE.equals(currentFill)) {
+                if(playerTurn == 0) {
                     circle.setFill(Color.RED);
+                    playerTurn = 1;
+                }
+                else {
+                    circle.setFill(Color.BLUE);
+                    playerTurn = 0;
                 }
             }
         });
