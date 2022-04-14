@@ -69,8 +69,7 @@ public class Controller {
         Random r = new Random();
         int low = 0;
         int high = 5;
-        int result = r.nextInt(high-low) + low;
-        return result;
+        return r.nextInt(high-low) + low;
     }
 
     /**

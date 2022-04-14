@@ -1,4 +1,4 @@
-package game_managers;
+package gamemanagers;
 
 public class Timekeeper extends Thread{
     int timeToExist;

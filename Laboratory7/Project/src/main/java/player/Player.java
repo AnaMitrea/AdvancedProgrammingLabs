@@ -3,7 +3,6 @@ package player;
 import game.Game;
 import setup.Tile;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,10 +19,6 @@ public class Player implements Runnable{
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Game getGame() {
@@ -88,10 +83,11 @@ public class Player implements Runnable{
     @Override
     public void run() {
         running = true;
-        //while(!game.getGameFinished())
-            synchronized (game) {
-                submitWord();
-            }
+
+        synchronized (game) {
+            submitWord();
+        }
+
         running = false;
     }
 }
